@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+@media (max-width: 768px) {
+  .open{
+    max-height: 200px;
+    transition: max-height 1s;
+  }
+  .close {
+    max-height: 0;
+    transition: max-height 0.5s;
+  }
+  .close-text{
+    opacity: 0;
+    transition: all 0.5s
+  }
+  .open-text{
+    opacity: 1;
+    transition :all 1.2s;
+  }
+}
