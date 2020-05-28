@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const profileLabelStyle = "flex-1 text-right pr-5 font-semibold text-xs"
-const profileContentStyle = "content text-xs font-light"
+const profileContentStyle = "content text-xs font-normal"
 
 const historyLabelStyle = "flex-1 text-right pr-5 text-xs"
 const historyContentStyle = "content font-light text-xs"

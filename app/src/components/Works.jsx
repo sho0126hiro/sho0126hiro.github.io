@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 const WorksItem = (prop) => {
     let item = prop.item
@@ -10,7 +11,9 @@ const WorksItem = (prop) => {
         )
     }
     return (
-        <div className="m-5 max-w-sm rounded-lg overflow-hidden shadow-lg bg-white">
+        <div className={`m-5 max-w-sm rounded-lg overflow-hidden shadow-lg 
+        
+        ${prop.effect ? "effect" : "no-effect"}`}>
             <img className={`w-full ${item.imgPath ? "" : "hidden"}`} src={item.imgPath} alt="works img" />
             <div className="px-6 py-3">
                 <div className="">
@@ -28,24 +31,41 @@ const WorksItem = (prop) => {
 }
 
 export default class Works extends React.Component {
-    constructor(){
+    constructor() {
         super()
-        this.state = {}
+        this.state = { latest: true, effect: false }
+    }
+
+    toggleLatest = () => {
+        this.setState({latest:!this.state.latest, effect: true})
+        setTimeout(()=>{
+            this.setState({effect:false})},500)
     }
 
     render() {
         let works = []
         let data = WORKS
-        data = data.sort((a,b)=>(
-            new Date(b.timestamp) - new Date(a.timestamp)
-        ))
+        data = data.sort((a, b) => {
+            let m_a = moment(b.timestamp, "YYYY/MM")
+            let m_b = moment(a.timestamp, "YYYY/MM")
+            if (this.state.latest) return m_a - m_b
+            return m_b - m_a
+        })
         for (let e of data) {
             works.push(
-                <WorksItem item={e} />
+                <WorksItem item={e} effect={this.state.effect} />
             )
         }
-        return <div className="flex flex-wrap">
-            {works}
+        return <div className="works">
+            <div className="text-right py-3 mx-5">
+                <label className="text-sm mx-3 pr-10">日付順</label>
+                <div className="inline allow-wrapper relative" onClick={this.toggleLatest}>
+                    <p className={`allow ${this.state.latest ? "up" : ""}`}></p>
+                </div>
+            </div>
+            <div className="flex flex-wrap">
+                {works}
+            </div>
         </div>
     }
 }
@@ -54,9 +74,9 @@ const WORKS = [
     {
         term: "2020.05",
         timestamp: "2020/05", // ソート用
-        title: "このHP",
-        subtitle: "ポートフォリオ",
-        discription: "就活用に自分のHPを作成しました。作成期間は1週間程度。初めてモバイルファーストで実装しました。",
+        title: "sho0126hiro.github.io",
+        subtitle: "個人ホームページ",
+        discription: "就活用に自分のHPを作成しました。React, TailswindCSSを使っています。開発期間は5日程度。初めてモバイルファーストを意識して実装しました。",
         tags: ["ReactJS"],
         blogUrl: null,
         imgPath: null,
@@ -116,7 +136,7 @@ const WORKS = [
         timestamp: "2017/10", // ソート用
         title: "2017年度マイスター作品",
         subtitle: "直感的な手の動作で動くラジコン",
-        discription: "初めてのチームプロジェクト(4名)。HackU 2017(Yahoo! Japan)での作品です。LeapMotionを用いて認識した手の角度やポーズなどを利用して、手を倒した方向に進むといった、直感的な動作で動くラジコンを実装した。",
+        discription: "初めてのチームプロジェクト(4名)。HackU 2017(Yahoo! Japan)での作品です。LeapMotionを用いて認識した手の角度やポーズなどを利用して、手を倒した方向に進むといった、直感的な動作で動くラジコンを実装しました。",
         tags: ["Python"],
         blogUrl: null,
         imgPath: "/img/meister2017.jpg"
