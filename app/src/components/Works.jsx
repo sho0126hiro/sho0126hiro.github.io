@@ -1,0 +1,134 @@
+import React from 'react'
+
+const WorksItem = (prop) => {
+    let item = prop.item
+    let tags = []
+    for (let t of item.tags) {
+        tags.push(
+            <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 m-1">
+                {t}</span>
+        )
+    }
+    return (
+        <div className="m-5 max-w-sm rounded-lg overflow-hidden shadow-lg bg-white">
+            <img className={`w-full ${item.imgPath ? "" : "hidden"}`} src={item.imgPath} alt="works img" />
+            <div className="px-6 py-3">
+                <div className="">
+                    <h2 className=" font-bold text-xl mb-2">{item.title}</h2>
+                    <h3 className="text-ms mb-2">{item.subtitle}</h3>
+                    <p className="text-gray-700 text-xs">{item.discription}</p>
+                    <a href={item.blogUrl} className={`text-xs ${item.blogUrl ? "" : "hidden"}`}>詳細ブログ</a>
+                </div>
+                <div className="pt-2">
+                    {tags}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default class Works extends React.Component {
+    constructor(){
+        super()
+        this.state = {}
+    }
+
+    render() {
+        let works = []
+        let data = WORKS
+        data = data.sort((a,b)=>(
+            new Date(b.timestamp) - new Date(a.timestamp)
+        ))
+        for (let e of data) {
+            works.push(
+                <WorksItem item={e} />
+            )
+        }
+        return <div className="flex flex-wrap">
+            {works}
+        </div>
+    }
+}
+
+const WORKS = [
+    {
+        term: "2020.05",
+        timestamp: "2020/05", // ソート用
+        title: "このHP",
+        subtitle: "ポートフォリオ",
+        discription: "就活用に自分のHPを作成しました。作成期間は1週間程度。初めてモバイルファーストで実装しました。",
+        tags: ["ReactJS"],
+        blogUrl: null,
+        imgPath: null,
+    },
+    {
+        term: "2020.05",
+        timestamp: "2020/04", // ソート用
+        title: "DiaryShare(仮)",
+        subtitle: "日記共有アプリ（開発中）",
+        discription: "SNSとブログの中間に位置し、特定の相手にだけ日記を共有できるようなアプリを個人で開発しています。現在はバックエンドをKotlinで開発中です。",
+        tags: ["Kotlin", "SpringBoot", "ReactJS"],
+        blogUrl: null,
+        imgPath: null
+    },
+    {
+        term: "2018.10 - 2019.03",
+        timestamp: "2018/10", // ソート用
+        title: "SHIWORI",
+        subtitle: "本のしおりをIoTに",
+        discription: "HackU 2018(Yahoo! Japan)でチーム(4人)で取り組んだプロジェクト。読書量の管理をし、スマホアプリでデータを可視化して表示するアプリを開発しました。書籍検索、本のレビューなどの機能も実装しました。自分はReactNative, Reduxを用いたアプリの開発を担当しました。",
+        tags: ["ReactNative", "Node.js"],
+        blogUrl: "https://sho0126hiro.hatenablog.com/entry/2019/03/12/141824",
+        imgPath: "/img/shiwori.jpg"
+    },
+    {
+        term: "2019.10 - 2020.03",
+        timestamp: "2019/10", // ソート用
+        title: "KOYOMI",
+        subtitle: "スマートな壁掛けカレンダー",
+        discription: "HackU2019(Yahoo! Japan)でチーム(4人)で取り組んだプロジェクト。壁掛けカレンダーとスマホのカレンダーを同時に管理したい！という気持ちから、壁掛けカレンダーをIoTにしました。Webアプリ化することでどんな端末でも使える様にし、家族間での共有メモ機能やカレンダー上の付加情報など、IoTカレンダーならではの機能を実装しました。",
+        tags: ["ReactJS", "Kotlin", "SpringBoot"],
+        blogUrl: null,
+        imgPath: "./img/koyomi.jpg"
+    },
+    {
+        term: "2019.09 - 2019.10",
+        timestamp: "2019/09", // ソート用
+        title: "文化祭 HP 2019",
+        subtitle: "最新情報をいち早くお届け",
+        discription: "チーム（5名程度）で取り組んだ。1年目の反省を生かし、模擬店長や部長から直接最新情報を入力してもらうことで、商品の値下がりやイベントの変更などの情報をいち早く届ける動的HPを実現しました。自分はプロジェクトリーダーとして、全体の計画やスケジューリングなどを行うほか、フロントエンド開発を行いました。",
+        tags: ["ReactNative", "Node.js"],
+        blogUrl: null,
+        imgPath: "/img/kfes2019.jpg"
+    },
+    {
+        term: "2019.09 - 2019.10",
+        timestamp: "2018/09", // ソート用
+        title: "文化祭 HP 2018 / LINE@",
+        subtitle: "当校初めての文化祭HP / LINE@",
+        discription: "文化祭でHPを作成するのは当校において初めてだった。新しい文化祭実行部門の立ち上げに携わり、文化祭HPの作成に取り組んだ。特に、直感的に遷移するマップ機能をHP上およびLINE＠に実装しました。",
+        tags: ["HTML/CSS", "Node.js"],
+        blogUrl: "https://sho0126hiro.hatenablog.com/entry/2018/11/06/233849",
+        imgPath: "/img/kfes2018.png"
+    },
+    {
+        term: "2017.10 - 2018.03",
+        timestamp: "2017/10", // ソート用
+        title: "2017年度マイスター作品",
+        subtitle: "直感的な手の動作で動くラジコン",
+        discription: "初めてのチームプロジェクト(4名)。HackU 2017(Yahoo! Japan)での作品です。LeapMotionを用いて認識した手の角度やポーズなどを利用して、手を倒した方向に進むといった、直感的な動作で動くラジコンを実装した。",
+        tags: ["Python"],
+        blogUrl: null,
+        imgPath: "/img/meister2017.jpg"
+    },
+    {
+        term: "2019.06",
+        timestamp: "2019/06", // ソート用
+        title: "WebcamBot",
+        subtitle: "Webカメラが写真をとって通知",
+        discription: "RaspberryPiに接続したWebカメラが定期的orお願いしたときに写真を撮って、SlackやLINEグループに投稿するBOTを開発しました。",
+        tags: ["Python",],
+        blogUrl: "https://sho0126hiro.hatenablog.com/entry/2019/06/16/183000",
+        imgPath: "/img/webcambot.jpg"
+    },
+]

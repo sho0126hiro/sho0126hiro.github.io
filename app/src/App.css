@@ -1,59 +1,32 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-
 @media (max-width: 768px) {
-  .open{
-    max-height: 200px;
-    transition: max-height 1s;
-  }
-  .close {
-    max-height: 0;
-    transition: max-height 0.5s;
-  }
-  .close-text{
-    opacity: 0;
-    transition: all 0.5s
-  }
-  .open-text{
+  .navbar-open {
+    max-height: 100vh;
     opacity: 1;
-    transition :all 1.2s;
+    visibility: visible;
+    transition: all 1.2s ease;
   }
+  .navbar-close {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+    visibility: hidden;
+  }
+}
+
+.home h1 {
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+}
+
+.about .profile .content, .about .history .content{
+  flex: 2;
+}
+
+.contact input::placeholder, .contact textarea::placeholder{
+  padding-left: 0.5rem;
 }
