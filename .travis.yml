@@ -1,0 +1,33 @@
+branches:
+  only:
+    - develop
+    
+language: node_js
+
+node_js:
+  - "12.16.1"
+
+cache:
+  directories:
+    - "node_modules"
+
+env:
+  CI: false
+
+install:
+  - cd $TRAVIS_BUILD_DIR
+  - npm install
+
+script:
+  - npm run build
+  - cd ..
+  
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local-dir: build
+  target-branch: develop
+  on:
+    branch: develop
