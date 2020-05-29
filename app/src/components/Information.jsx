@@ -9,7 +9,6 @@ export default () => {
                 <span className="text-xs pl-5">{e.timestamp}</span>
             </p>
         )
-
     }
     return <div className="my-4">
         <label className="text-xl ml-4">information</label>

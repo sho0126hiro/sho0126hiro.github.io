@@ -5,14 +5,24 @@ const profileLabelStyle = "flex-1 text-right pr-5 font-semibold text-xs"
 const profileContentStyle = "content text-xs font-normal"
 
 const historyLabelStyle = "flex-1 text-right pr-5 text-xs"
-const historyContentStyle = "content font-light text-xs"
+const historyContentStyle = "content text-xs"
 
 const linkLabelStyle = "block mx-8 text-xs font-bold"
 const linkContentStyle = "block mx-8 text-xs"
 
+const h1WrapperStyle = "bg-yellow-800 relative overflow-hidden"
+const h1ImgStyle = "w-full object-cover object-top h-56 opacity-50 overflow-hidden"
+const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
+
+
 export default () => (
 	<div className="about">
-		<h1 className="text-4xl text-center py-4 bg-gray-200">About</h1>
+		<div className={h1WrapperStyle}>
+			<img src="/img/about.JPG" className={h1ImgStyle} />
+			<h1 className={h1TextStyle} >
+				ABOUT
+            </h1>
+		</div>
 		{/* profile */}
 		<div className="profile py-2">
 			<label className="text-2xl pl-5">Sho Hirose</label>

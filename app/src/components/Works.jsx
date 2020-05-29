@@ -1,18 +1,22 @@
 import React from 'react'
 import moment from 'moment'
 
+const h1WrapperStyle = "bg-indigo-700 relative overflow-hidden"
+const h1ImgStyle = "w-full object-cover object-top h-56 opacity-75 overflow-hidden"
+const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
+
+
 const WorksItem = (prop) => {
     let item = prop.item
     let tags = []
-    for (let t of item.tags) {
+    item.tags.forEach((t, i) => {
         tags.push(
-            <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 m-1">
-                {t}</span>
+        <span key={i} className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 m-1">
+        {t}</span>
         )
-    }
+    })
     return (
         <div className={`m-5 max-w-sm rounded-lg overflow-hidden shadow-lg 
-        
         ${prop.effect ? "effect" : "no-effect"}`}>
             <img className={`w-full ${item.imgPath ? "" : "hidden"}`} src={item.imgPath} alt="works img" />
             <div className="px-6 py-3">
@@ -39,7 +43,7 @@ export default class Works extends React.Component {
     toggleLatest = () => {
         this.setState({latest:!this.state.latest, effect: true})
         setTimeout(()=>{
-            this.setState({effect:false})},500)
+            this.setState({effect:false})},400)
     }
 
     render() {
@@ -51,12 +55,16 @@ export default class Works extends React.Component {
             if (this.state.latest) return m_a - m_b
             return m_b - m_a
         })
-        for (let e of data) {
-            works.push(
-                <WorksItem item={e} effect={this.state.effect} />
-            )
-        }
+        data.forEach((item,i) => {
+            works.push(<WorksItem key={i} item={item} effect={this.state.effect} />)
+        })
         return <div className="works">
+            <div className={h1WrapperStyle}>
+			<img src="/img/skytree.JPG" className={h1ImgStyle} />
+			<h1 className={h1TextStyle} >
+				WORKS
+            </h1>
+		</div>
             <div className="text-right py-3 mx-5">
                 <label className="text-sm mx-3 pr-10">日付順</label>
                 <div className="inline allow-wrapper relative" onClick={this.toggleLatest}>
