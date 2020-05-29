@@ -11,6 +11,8 @@ cache:
   directories:
     - "node_modules"
 
+warnings_are_errors: false
+
 install:
   - cd $TRAVIS_BUILD_DIR
   - npm install
