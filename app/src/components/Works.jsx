@@ -21,11 +21,14 @@ const WorksItem = (prop) => {
             <img className={`w-full ${item.imgPath ? "" : "hidden"}`} src={item.imgPath} alt="works img" />
             <div className="px-6 py-3">
                 <div className="">
-                    <h2 className=" font-bold text-xl mb-2">{item.title}</h2>
-                    <h3 className="text-ms mb-2">{item.subtitle}</h3>
+                    <div className="flex">
+                        <p className="flex w-1/2 text-xs text-gray-600">{item.term}</p>
+                        <a href={item.blogUrl} className={`text-xs w-1/2 text-gray-600 text-right ${item.blogUrl ? "" : "hidden"}`}>詳細ブログ</a>
+                    </div>
+                    <h2 className="font-bold text-xl">{item.title}</h2>
+                    <h3 className="text-sm mb-2">{item.subtitle}</h3>
                     <p className="text-gray-700 text-xs">{item.discription}</p>
-                    <a href={item.blogUrl} className={`text-xs ${item.blogUrl ? "" : "hidden"}`}>詳細ブログ</a>
-                </div>
+                    </div>
                 <div className="pt-2">
                     {tags}
                 </div>
@@ -84,7 +87,7 @@ const WORKS = [
         timestamp: "2020/05", // ソート用
         title: "sho0126hiro.github.io",
         subtitle: "個人ホームページ",
-        discription: "就活用に自分のHPを作成しました。React, TailswindCSSを使っています。開発期間は5日程度。初めてモバイルファーストを意識して実装しました。",
+        discription: "就活用に自分のHPを作成しました。主にReact, TailswindCSS, GoogleAppsScriptを使っています。開発期間は1週間程度。初めてモバイルファーストを意識して実装しました。",
         tags: ["ReactJS"],
         blogUrl: null,
         imgPath: null,
@@ -134,7 +137,7 @@ const WORKS = [
         timestamp: "2018/09", // ソート用
         title: "文化祭 HP 2018 / LINE@",
         subtitle: "当校初めての文化祭HP / LINE@",
-        discription: "文化祭でHPを作成するのは当校において初めてだった。新しい文化祭実行部門の立ち上げに携わり、文化祭HPの作成に取り組んだ。特に、直感的に遷移するマップ機能をHP上およびLINE＠に実装しました。",
+        discription: "文化祭でHPを作成するのは当校において初めてだった。新しい文化祭実行部門の立ち上げに携わり、文化祭HPの作成に取り組みました特に、直感的に遷移するマップ機能をHP上およびLINE＠に実装しました。",
         tags: ["HTML/CSS", "Node.js"],
         blogUrl: "https://sho0126hiro.hatenablog.com/entry/2018/11/06/233849",
         imgPath: "/img/kfes2018.png"

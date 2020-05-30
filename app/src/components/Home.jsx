@@ -82,7 +82,6 @@ export default () => {
             </h2>
                 </Link>
             </div>
-            <p>footer</p>
         </div>
     </div>
 }

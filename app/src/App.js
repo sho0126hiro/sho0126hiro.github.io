@@ -11,6 +11,7 @@ import Contact from './components/Contact'
 import Links from './components/Links'
 import Research from './components/Research';
 import ScrollToTop from './components/ScrollToTop'
+import Footer from './components/Footer';
 
 export default () => {
 	return <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -25,6 +26,7 @@ export default () => {
 			<Route path='/research' component={Research} />
 			<Route path='/links' component={Links} />
 			<Route path='/contact' component={Contact} />
+			<Footer />
 			</div>
 		</Switch>
 		

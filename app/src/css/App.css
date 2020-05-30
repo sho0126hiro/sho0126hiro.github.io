@@ -82,6 +82,10 @@ opacity: 1;
   padding-top: 3.5rem;
 }
 
+.text-xxs{
+  font-size: 0.1rem;
+}
+
 .home .content img{
   -webkit-transform: scale(1);
   transform: scale(1);

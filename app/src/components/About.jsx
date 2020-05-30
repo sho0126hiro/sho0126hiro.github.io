@@ -25,7 +25,7 @@ export default () => (
 		</div>
 		{/* profile */}
 		<div className="profile py-2">
-			<label className="text-2xl pl-5">Sho Hirose</label>
+			<label className="text-2xl pl-5 font-bold">Sho Hirose</label>
 			<p className="px-5 text-xs">National Institute of Technology, Tokyo Collage</p>
 			<p className="px-5 text-xs">Advanced Cource of Mechanical and Computer Science</p>
 			<img src="/img/profile.JPG" className="w-3/6 h-3/6 mx-auto p-5" />
@@ -76,6 +76,10 @@ export default () => (
 				</div>
 			</div>
 		</div>
+		{/* Career */}
+		<div>
+			
+		</div>
 		{/* Skills */}
 		<div className="history py-2">
 			<label className="text-xl pl-5 my-3">Skills</label>
@@ -89,15 +93,21 @@ export default () => (
 			<label className="text-xl pl-5 my-3">Links / SNS</label>
 			<div>
 				<label className={linkLabelStyle}>Home</label>
-				<Link className={linkContentStyle} to="/">sho0126hiro.github.io</Link>
+				<Link className={linkContentStyle} to="/">sho0126hiro.github.io
+				<i class="fas fa-link text-xxs ml-1 text-gray-700"></i></Link>
 				<label className={linkLabelStyle}>Github</label>
-				<a href="https://github.com/sho0126hiro" target="_blank" className={linkContentStyle}>sho0126hiro</a>
+				<a href="https://github.com/sho0126hiro" target="_blank" className={linkContentStyle}>sho0126hiro
+				<i class="fas fa-link text-xxs ml-1 text-gray-700"></i></a>
 				<label className={linkLabelStyle}>Twitter</label>
-				<a href="https://twitter.com/sho0126hiro" target="_blank" className={linkContentStyle}>@sho0126hiro</a>
+				<a href="https://twitter.com/sho0126hiro" target="_blank" className={linkContentStyle}>@sho0126hiro
+				<i class="fas fa-link text-xxs ml-1 text-gray-700"></i></a>
 				<label className={linkLabelStyle}>Facebook</label>
-				<a href="https://www.facebook.com/sho.hirose.142" target="_blank" className={linkContentStyle}>sho.hirose.142</a>
+				<a href="https://www.facebook.com/sho.hirose.142" target="_blank" className={linkContentStyle}>sho.hirose.142
+				<i class="fas fa-link text-xxs ml-1 text-gray-700"></i></a>
+				
 				<label className={linkLabelStyle}>Hatena Blog</label>
-				<a href="https://sho0126hiro.hatenablog.com/" target="_blank" className={linkContentStyle}>Shoのシステム開発忘備録</a>
+				<a href="https://sho0126hiro.hatenablog.com/" target="_blank" className={linkContentStyle}>Shoのシステム開発忘備録
+				<i class="fas fa-link text-xxs ml-1 text-gray-700"></i></a>
 			</div>
 		</div>
 	</div>
