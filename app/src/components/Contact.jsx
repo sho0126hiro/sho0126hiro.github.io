@@ -1,22 +1,40 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import dotenv from 'dotenv'
+import { stringify } from 'querystring'
+import { prototype } from 'module'
+
 const h1WrapperStyle = "bg-blue-800 relative overflow-hidden"
-const h1ImgStyle = "w-full object-cover h-56 opacity-50 overflow-hidden"
+const h1ImgStyle = "w-full object-cover h-40 opacity-50 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
 
+const ErrorMessage = (props) => {
+    let items = []
+    props.errors.forEach((e, i) => {
+        items.push(
+            <>
+                <i className="fas fa-exclamation-triangle text-red-600 text-xs inline-block"></i>
+                <span key={i} className="text-left text-red-600 text-xs my-1 ml-2">{e}</span>
+            </>
+        )
+    })
+    return <div>
+        {items}
+    </div>
+}
 
 export default class Contact extends React.Component {
     constructor() {
         super()
         this.state = {
-            success_page: true,
+            success_page: false,
             name: "",
             email: "",
             content: "",
             errors: {
-                name: null,
+                name: [],
                 email: [],
-                content: null,
+                content: [],
             }
         }
     }
@@ -24,46 +42,77 @@ export default class Contact extends React.Component {
     handleNameChange = (event) => {
         this.setState({ name: event.target.value })
     }
-
     handleEmailChange = (event) => {
         this.setState({ email: event.target.value })
     }
-
-    varidateRequired(prop, message) {
-        if (prop === "") return message
-        return null
-    }
-
     handleContentChange = (event) => {
         this.setState({ content: event.target.value })
     }
 
-    validate = () => {
-        const nameError = this.varidateRequired(this.state.name, "名前を入力してください。")
-        const emailError = this.varidateRequired(this.state.name, "メールアドレスを入力してください")
-        const contentError = this.varidateRequired(this.state.content, "本文を入力してください。")
+    varidateRequired(prop, message) {
+        if (prop === "") return [message]
+        return []
+    }
+
+    varidateEmailFormat = (prop, message, errors) => {
+        const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (regex.test(prop)) return
+        if (errors.length != 1) errors.push(message)
+    }
+
+
+    varidate = () => {
+        const nameErrors = this.varidateRequired(this.state.name, "名前を入力してください。")
+        const emailErrors = this.varidateRequired(this.state.email, "メールアドレスを入力してください")
+        const contentErrors = this.varidateRequired(this.state.content, "本文を入力してください。")
+        this.varidateEmailFormat(this.state.email, "不正なメールアドレスです", emailErrors)
+        console.log(nameErrors, emailErrors, contentErrors)
         this.setState({
             errors: {
-                name: nameError,
-                email: emailError,
-                content: contentError
+                name: nameErrors,
+                email: emailErrors,
+                content: contentErrors
             }
         })
+        if (nameErrors.length != 0 || emailErrors.length != 0 || contentErrors.length != 0) return false
+        return true
+    }
+
+    sendMail = async () => {
+        console.log("send")
+        this.setState({ success_page: true })
+        const data = {
+            name: this.state.name,
+            email: this.state.email,
+            content: this.state.content,
+            callback: true,
+        }
+        let endpoint = process.env.REACT_APP_EMAIL_API_URL
+        fetch(endpoint, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'text/plain'
+            },
+            body: JSON.stringify(data)
+        }).then(res => res.json).then((resJson) => { console.log(resJson) })
     }
 
     handleSubmit = (event) => {
-        alert("本当に送信しますか？")
-        this.validate()
+        if (this.varidate()) this.sendMail()
+        else {
+            return
+        }
         event.preventDefault();
         this.setState({
             name: "",
             email: "",
             content: "",
             errors: {
-                name: "",
+                name: [],
                 email: [],
-                content: "",
-            }            
+                content: [],
+            }
         })
     }
 
@@ -73,12 +122,18 @@ export default class Contact extends React.Component {
                 <div className={h1WrapperStyle}>
                     <img src="/img/contact.JPG" className={h1ImgStyle} alt="contact" />
                     <h1 className={h1TextStyle} >
-                        CONTACT
-            </h1>
+                        CONTACT</h1>
                 </div>
-                <p>お問い合わせありがとうございます。</p>
-                <p>三日以内にこちらからの連絡がない場合、以下の連絡先にお問い合わせいただければ幸いです。</p>
-                <Link to="/" className="underline">home</Link>
+                <div className="m-5">
+                    <h2 className="text-2xl font-bold">送信完了</h2>
+                    <p className="text-sm text-gray-700">お問い合わせありがとうございます。</p>
+                    <p className="mt-5 text-sm">三日以内にこちらからの連絡がない場合、以下の連絡先にお問い合わせいただければ幸いです。</p>
+                    <ul className="mx-5 my-2">
+                        <li>sho0126hiro@gmail.com<i class="far fa-copy ml-1 text-xs text-gray-700"></i></li>
+                        <li>s20613@tokyo.kosen-ac.jp<i class="far fa-copy ml-1 text-xs text-gray-700"></i></li>
+                    </ul>
+                    <Link to="/" className="underline text-center block mt-4">Homeに戻る</Link>
+                </div>
             </div>
         }
         return <div className="contact">
@@ -88,28 +143,36 @@ export default class Contact extends React.Component {
                     CONTACT
             </h1>
             </div>
-            <div className="text-center my-3">
-                <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="border-2 pr-24 pl-2 py-3 m-3"
-                    value={this.state.name}
-                    onChange={this.handleNameChange} />
-
-                <input
-                    type="email"
-                    placeholder="e-mail address"
-                    className="border-2  pr-24 pl-2 py-3 m-3"
-                    value={this.state.email}
-                    onChange={this.handleEmailChange} />
-                <textarea
-                    type="text"
-                    placeholder="Inquery Contents"
-                    className="border-2 pr-24 pl-2 py-3 m-3 h-64"
-                    value={this.state.content}
-                    onChange={this.handleContentChange} />
+            <div className="mt-10">
+                <div className="w-9/12 mx-auto">
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        className={`border-2 rounded  w-full py-3 pl-3 ${this.state.errors.name.length ? "border border-red-400" : " mb-5 "}`}
+                        value={this.state.name}
+                        onChange={this.handleNameChange} />
+                    <ErrorMessage errors={this.state.errors.name} />
+                </div>
+                <div className="w-9/12 mx-auto pt-2">
+                    <input
+                        type="text"
+                        placeholder="e-mail address"
+                        className={`border-2 rounded  w-full py-3 pl-3 ${this.state.errors.email.length ? "border border-red-400" : "mb-5"}`}
+                        value={this.state.email}
+                        onChange={this.handleEmailChange} />
+                    <ErrorMessage errors={this.state.errors.email} />
+                </div>
+                <div className="w-9/12 mx-auto pt-2">
+                    <textarea
+                        type="text"
+                        placeholder="Inquery Contents"
+                        className={`border-2 rounded  w-full h-56 py-3 pl-3 ${this.state.errors.content.length ? "border border-red-400" : "mb-5"}`}
+                        value={this.state.content}
+                        onChange={this.handleContentChange} />
+                    <ErrorMessage errors={this.state.errors.content} />
+                </div>
             </div>
-            <div className="text-center">
+            <div className={`text-center ${this.state.errors.content.length ? "mt-2" : ""}`}>
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                     onClick={this.handleSubmit}>
                     Submit
