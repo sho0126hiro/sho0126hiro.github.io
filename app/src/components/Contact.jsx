@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import dotenv from 'dotenv'
 import { stringify } from 'querystring'
 import { prototype } from 'module'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const h1WrapperStyle = "bg-blue-800 relative overflow-hidden"
 const h1ImgStyle = "w-full object-cover h-40 opacity-50 overflow-hidden"
@@ -129,8 +130,14 @@ export default class Contact extends React.Component {
                     <p className="text-sm text-gray-700">お問い合わせありがとうございます。</p>
                     <p className="mt-5 text-sm">三日以内にこちらからの連絡がない場合、以下の連絡先にお問い合わせいただければ幸いです。</p>
                     <ul className="mx-5 my-2">
-                        <li>sho0126hiro@gmail.com<i class="far fa-copy ml-1 text-xs text-gray-700"></i></li>
-                        <li>s20613@tokyo.kosen-ac.jp<i class="far fa-copy ml-1 text-xs text-gray-700"></i></li>
+                        <CopyToClipboard text="sho0126hiro@gmail.com">
+                            <li>sho0126hiro@gmail.com
+                            <i class="far fa-copy ml-1 text-xs text-gray-700"></i>
+                            </li>
+                        </CopyToClipboard>
+                        <CopyToClipboard text="s20613@tokyo.kosen-ac.jp" >
+                            <li>s20613@tokyo.kosen-ac.jp<i class="far fa-copy ml-1 text-xs text-gray-700"></i></li>
+                        </CopyToClipboard>
                     </ul>
                     <Link to="/" className="underline text-center block mt-4">Homeに戻る</Link>
                 </div>
