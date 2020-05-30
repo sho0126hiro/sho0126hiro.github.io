@@ -72,7 +72,7 @@ export default () => (
 				<div className="flex-auto flex">
 					<label className={historyLabelStyle}>2020.04</label>
 					<p className={historyContentStyle}>
-						国立東京工業高等専門学校 <br />機械情報システム工学専攻 在学中 (1年)</p>
+						国立東京工業高等専門学校 <br />機械情報システム工学専攻 在学中（1年）</p>
 				</div>
 			</div>
 		</div>
@@ -81,25 +81,25 @@ export default () => (
 			<label className="text-xl pl-5 my-3 font-semibold" id="career">Career</label>
 			<div className=""> 
 			<div className="px-6 mt-1">
-				<a className="px-2 text-sm font-medium text-blue-500" href="https://lecre.jp/">株式会社ルクレ
+				<a className="px-2 text-sm text-blue-500" href="https://lecre.jp/">株式会社ルクレ
 				<span className="text-xs pl-2 m-1 text-gray-700">2018.08 (2week)</span></a>
 				<p className="text-xs mx-4 mt-1 mb-2">CreateJSを用いて動きのあるリッチなWebアプリケーションを開発しました。</p>
 				<hr />
 			</div>
 			<div className="px-6 mt-1">
-				<a className="px-2 text-sm font-medium text-blue-500" href="https://bldt.jp/">株式会社ビルディット
+				<a className="px-2 text-sm text-blue-500" href="https://bldt.jp/">株式会社ビルディット
 				<span className="text-xs m-1 pl-2 text-gray-700">2019.06 - 2019.07 (2month)</span></a>
 				<p className="text-xs mx-4 mt-1 mb-2">シンプルな静的サイトの開発やReactJSを用いたTodoアプリ、およびPHP(Laravel)を用いてWebサービスを開発しました。</p>
 				<hr />
 			</div>
 			<div className="px-6 mt-1">
-				<a className="px-2 text-sm font-medium text-blue-500" href="https://www.askul.co.jp/kaisya/">アスクル株式会社
+				<a className="px-2 text-sm text-blue-500" href="https://www.askul.co.jp/kaisya/">アスクル株式会社
 				<span className="text-xs m-1  ml-2 text-gray-700">2019.08 (2week)</span></a>
 				<p className="text-xs mx-4 mt-1 mb-2">個人向け通販サイト<a href="https://lohaco.jp" className="text-blue-600">Lohaco</a>のサービス改善のための提案および開発を行いました。</p>
 				<hr />
 			</div>
 			<div className="px-6 mt-1 mb-2">
-				<a className="px-2 text-sm font-medium text-blue-500"　href="https://info.cookpad.com/">クックパッド株式会社
+				<a className="px-2 text-sm text-blue-500"　href="https://info.cookpad.com/">クックパッド株式会社
 				<span className="text-xs m-1 ml-2 text-gray-700">2020.04 (1day)</span></a>
 				<p className="text-xs mx-4 mt-1 mb-2">Rubyを用いたCookpad模擬アプリケーションのパフォーマンスチューニングを行いました。</p>
 				<hr />

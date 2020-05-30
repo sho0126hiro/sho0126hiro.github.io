@@ -13,7 +13,7 @@ const WorksItem = (prop) => {
     item.tags.forEach((t, i) => {
         let color = TAG_COLORS[t] || "text-gray-800"
         tags.push(<>
-            <i class={`fas fa-circle text-xxs ${color}`}></i>
+            <i class={`fas fa-circle text-xs ${color}`}></i>
         <span key={i} className="inline-block text-xs text-gray-900 m-1">
         {t}</span>
         </>

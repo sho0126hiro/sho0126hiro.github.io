@@ -16,7 +16,7 @@ import Footer from './components/Footer';
 export default () => {
 	return <BrowserRouter basename={process.env.PUBLIC_URL}>
 		<Switch>
-			<div>
+			<div onTouchStart="">
 			<ScrollToTop />
 			<Navbar />
 			<div className="pt-14"></div>
