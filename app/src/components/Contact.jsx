@@ -6,7 +6,7 @@ import { prototype } from 'module'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const h1WrapperStyle = "bg-blue-800 relative overflow-hidden"
-const h1ImgStyle = "w-full object-cover h-40 opacity-50 overflow-hidden"
+const h1ImgStyle = "w-full object-cover h-56 opacity-50 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
 
 const ErrorMessage = (props) => {

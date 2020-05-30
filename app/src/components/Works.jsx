@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
-
+import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 const h1WrapperStyle = "bg-indigo-700 relative overflow-hidden"
 const h1ImgStyle = "w-full object-cover object-top h-56 opacity-75 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
@@ -10,13 +11,16 @@ const WorksItem = (prop) => {
     let item = prop.item
     let tags = []
     item.tags.forEach((t, i) => {
-        tags.push(
-        <span key={i} className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 m-1">
+        let color = TAG_COLORS[t] || "text-gray-800"
+        tags.push(<>
+            <i class={`fas fa-circle text-xxs ${color}`}></i>
+        <span key={i} className="inline-block text-xs text-gray-900 m-1">
         {t}</span>
+        </>
         )
     })
     return (
-        <div className={`m-5 max-w-sm rounded-lg overflow-hidden shadow-lg 
+        <div className={`m-5 max-w-sm rounded-b-lg border overflow-hidden shadow-lg 
         ${prop.effect ? "effect" : "no-effect"}`}>
             <img className={`w-full ${item.imgPath ? "" : "hidden"}`} src={item.imgPath} alt="works img" />
             <div className="px-6 py-3">
@@ -29,7 +33,7 @@ const WorksItem = (prop) => {
                     <h3 className="text-sm mb-2">{item.subtitle}</h3>
                     <p className="text-gray-700 text-xs">{item.discription}</p>
                     </div>
-                <div className="pt-2">
+                <div className="pt-1 text-left">
                     {tags}
                 </div>
             </div>
@@ -68,9 +72,16 @@ export default class Works extends React.Component {
 				WORKS
             </h1>
 		</div>
-            <div className="text-right py-3 mx-5">
+            <div className="m-5 p-3 bg-gray-200">
+                <p className="text-gray-700 text-xs">
+                    これまでに個人またはチームで取り組んだ開発作品です。<br/>
+                    研究業績については<Link className="underline" to="/research">こちら</Link> <br/>
+                    これまでのインターンシップ履歴については<HashLink className="underline" to="/about#career">こちら</HashLink>
+                </p>
+            </div>
+            <div className="text-right mx-5" onClick={this.toggleLatest}>
                 <label className="text-sm mx-3 pr-10">日付順</label>
-                <div className="inline allow-wrapper relative" onClick={this.toggleLatest}>
+                <div className="inline allow-wrapper relative">
                     <p className={`allow ${this.state.latest ? "up" : ""}`}></p>
                 </div>
             </div>
@@ -81,6 +92,17 @@ export default class Works extends React.Component {
     }
 }
 
+const TAG_COLORS = {
+    "ReactJS": "text-blue-600",
+    "Kotlin": "text-orange-500",
+    "SpringBoot": "text-green-600",
+    "Node.js": "text-green-700",
+    "GoogleAppsScript": "text-blue-800",
+    "ReactNative": "text-blue-700",
+    "HTML/CSS": "text-yellow-500",
+    "Python": "text-pink-400",
+}
+
 const WORKS = [
     {
         term: "2020.05",
@@ -88,7 +110,7 @@ const WORKS = [
         title: "sho0126hiro.github.io",
         subtitle: "個人ホームページ",
         discription: "就活用に自分のHPを作成しました。主にReact, TailswindCSS, GoogleAppsScriptを使っています。開発期間は1週間程度。初めてモバイルファーストを意識して実装しました。",
-        tags: ["ReactJS"],
+        tags: ["ReactJS", "GoogleAppsScript"],
         blogUrl: null,
         imgPath: null,
     },
@@ -127,7 +149,7 @@ const WORKS = [
         timestamp: "2019/09", // ソート用
         title: "文化祭 HP 2019",
         subtitle: "最新情報をいち早くお届け",
-        discription: "チーム（5名程度）で取り組んだ。1年目の反省を生かし、模擬店長や部長から直接最新情報を入力してもらうことで、商品の値下がりやイベントの変更などの情報をいち早く届ける動的HPを実現しました。自分はプロジェクトリーダーとして、全体の計画やスケジューリングなどを行うほか、フロントエンド開発を行いました。",
+        discription: "チーム（5名程度）で取り組みました。1年目の反省を生かし、模擬店長や部長から直接最新情報を入力してもらうことで、商品の値下がりやイベントの変更などの情報をいち早く届ける動的HPを実現しました。自分はプロジェクトリーダーとして、全体の計画やスケジューリングなどを行うほか、フロントエンド開発を行いました。",
         tags: ["ReactNative", "Node.js"],
         blogUrl: null,
         imgPath: "/img/kfes2019.jpg"
@@ -137,7 +159,7 @@ const WORKS = [
         timestamp: "2018/09", // ソート用
         title: "文化祭 HP 2018 / LINE@",
         subtitle: "当校初めての文化祭HP / LINE@",
-        discription: "文化祭でHPを作成するのは当校において初めてだった。新しい文化祭実行部門の立ち上げに携わり、文化祭HPの作成に取り組みました特に、直感的に遷移するマップ機能をHP上およびLINE＠に実装しました。",
+        discription: "文化祭でHPを作成するのは当校において初めてでした。新しい文化祭実行部門の立ち上げに携わり、文化祭HPの作成に取り組みました特に、直感的に遷移するマップ機能をHP上およびLINE＠に実装しました。",
         tags: ["HTML/CSS", "Node.js"],
         blogUrl: "https://sho0126hiro.hatenablog.com/entry/2018/11/06/233849",
         imgPath: "/img/kfes2018.png"
