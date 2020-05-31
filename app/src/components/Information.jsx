@@ -11,7 +11,7 @@ export default () => {
             </div>
         )
     }
-    return <div className="rounded-lg m-4 p-3 bg-pink-200">
+    return <div className="rounded-lg m-4 mt-5 p-3 bg-pink-200">
         <label className="font-semibold text-pink-700 mx-2">Information</label>
         <div className="w-full mt-2">
             {infomation}

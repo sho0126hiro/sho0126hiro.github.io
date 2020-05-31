@@ -177,7 +177,7 @@ export default class Contact extends React.Component {
                 </div>
             </div>
             <div className={`text-center ${this.state.errors.content.length ? "mt-2" : ""}`}>
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                <button className="bg-blue-700 hover:bg-blue-800 text-blue-100 font-bold py-2 px-10 mb-5 rounded"
                     onClick={this.handleSubmit}>
                     Submit
             </button>
