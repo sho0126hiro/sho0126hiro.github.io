@@ -12,7 +12,7 @@ export default () => {
         )
     }
     return <div className="rounded-lg m-4 mt-5 p-3 bg-pink-200">
-        <label className="font-semibold text-pink-700 mx-2">Information</label>
+        <label className="font-semibold text-pink-700 mx-1">Information</label>
         <div className="w-full mt-2">
             {infomation}
         </div>
@@ -20,11 +20,11 @@ export default () => {
 }
 const INFO = [
     {
+        message: "モバイル対応できました。",
+        timestamp: "2020/05/31"
+    },
+    {
         message: "現在開発中です。モバイル対応のレイアウトを書いています。",
         timestamp: "2020/05/20"
     },
-    {
-        message: "モバイル対応できました。",
-        timestamp: "2020/05/31"
-    }
 ]

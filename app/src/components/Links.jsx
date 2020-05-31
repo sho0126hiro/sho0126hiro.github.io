@@ -28,19 +28,19 @@ export default () => (
 
 				<label className={linkLabelStyle}><i class="mr-2 fab fa-github"></i>Github</label>
 				<a href="https://github.com/sho0126hiro" target="_blank" className={linkContentStyle}>sho0126hiro
-				<i class="fas fa-link text-xxs ml-1 text-gray-700"></i></a>
+				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 				
 				<label className={linkLabelStyle}><i class="mr-2 fab fa-twitter text-blue-400"></i>Twitter</label>
 				<a href="https://twitter.com/sho0126hiro" target="_blank" className={linkContentStyle}>@sho0126hiro
-				<i class="fas fa-link text-xxs ml-1 text-gray-700"></i></a>
+				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 				
 				<label className={linkLabelStyle}><i class="mr-2 fab fa-facebook-f text-blue-600"></i>Facebook</label>
 				<a href="https://www.facebook.com/sho.hirose.142" target="_blank" className={linkContentStyle}>sho.hirose.142
-				<i class="fas fa-link text-xxs ml-1 text-gray-700"></i></a>
+				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 				
 				<label className={`${linkLabelStyle}`}>Hatena Blog</label>
 				<a href="https://sho0126hiro.hatenablog.com/" target="_blank" className={`${linkContentStyle} mb-4`}>Shoのシステム開発忘備録
-				<i class="fas fa-link text-xxs ml-1 text-gray-700"></i></a>
+				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 			
 			</div>
 		</div>
