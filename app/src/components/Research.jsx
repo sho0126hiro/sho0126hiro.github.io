@@ -13,14 +13,14 @@ export default () => (
             </h1>
         </div>
         <div className="m-5">
-            <h2 className="text-xl font-bold my-2">研究テーマ</h2>
-            <p className="text-sm m-2">機械学習（強化学習、深層強化学習）を活用した応用研究（介護予防システム）
+            <h2 className="text-xl font-bold mt-1">研究テーマ</h2>
+            <p className="text-sm px-2">機械学習（強化学習、深層強化学習）を活用した応用研究（介護予防システム）
         </p>
-            <h2 className="text-xl my-2 font-bold">研究業績</h2>
-            <div>
+            <h2 className="text-xl mt-4 font-bold">研究業績</h2>
+            <div className="mx-2">
                 <h3>国際会議発表</h3>
-                <ul className="pl-4">
-                    <li className="list-decimal text-xs m-2">
+                <ul className="mx-5">
+                    <li className="list-decimal mb-2 mt-1 text-xs">
                         Daisuke Kitakoshi, Sho Hirose, Akihiro Yamashita, Kentarou Suzuki, Masato Suzuki: Development of an Intelligent Dialogue Agent for Older Adults -Evaluation of Functions to Control Spontaneous Talk and Coordinate Speech Content-, Proc. 2019 Conference on Technologies and Applications of Artificial Intelligence (TAAI2019), Kaohsiung, Taiwan, 2019 (Accepted).
                         [
                 <a className="font-bold underline"

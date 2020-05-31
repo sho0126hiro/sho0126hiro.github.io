@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ScrollableAnchor from 'react-anchor-link-smooth-scroll'
 
 const profileLabelStyle = "flex-1 text-right pr-5 font-semibold text-xs"
 const profileContentStyle = "content text-xs font-normal"
 
 const historyLabelStyle = "flex-1 text-right pr-5 text-xs"
-const historyContentStyle = "content text-xs"
+const historyContentStyle = "content text-xs mr-1"
 
 const linkLabelStyle = "block text-xs font-bold"
 const linkContentStyle = "block text-xs"
@@ -77,8 +78,8 @@ export default () => (
 			</div>
 		</div>
 		{/* Career */}
-		<div className="career">
-			<label className="text-xl pl-5 my-3 font-semibold" id="career">Career</label>
+		<div className="career" id="career">
+			<label className="text-xl pl-5 my-3 font-semibold">Career</label>
 			<div className=""> 
 			<div className="px-6 mt-1">
 				<a className="px-2 text-sm text-blue-500" href="https://lecre.jp/">株式会社ルクレ
@@ -88,7 +89,7 @@ export default () => (
 			</div>
 			<div className="px-6 mt-1">
 				<a className="px-2 text-sm text-blue-500" href="https://bldt.jp/">株式会社ビルディット
-				<span className="text-xs m-1 pl-2 text-gray-700">2019.06 - 2019.07 (2month)</span></a>
+				<span className="text-xs m-1 pl-2 text-gray-700">2019.06-2019.07 (2month)</span></a>
 				<p className="text-xs mx-4 mt-1 mb-2">シンプルな静的サイトの開発やReactJSを用いたTodoアプリ、およびPHP(Laravel)を用いてWebサービスを開発しました。</p>
 				<hr />
 			</div>
@@ -110,7 +111,7 @@ export default () => (
 		<div className="">
 			<label className="text-xl pl-5 my-3 font-semibold">Skills</label>
 			<div className="ml-10 mr-8 text-sm">
-				<p>C, Java, Python, Kotlin, HTML, CSS, JavaScript, Nodejs, TypeScript, PHP, Springboot, ReactJS, Laravel, ReactNative, MySQL, Docker, <br />
+				<p>C, Java, Python, Kotlin, HTML, CSS, JavaScript, Nodejs, TypeScript, PHP, Springboot, ReactJS, Laravel, ReactNative, MySQL, Docker, Firebase, <br />
 					Machine Learning, Reinforcement Learning, Deep Reinforcement Learning</p>
 			</div>
 		</div>
@@ -138,6 +139,3 @@ export default () => (
 		</div>
 	</div>
 )
-/**
- *　名前、所属、趣味、スキル
- */

@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
-import { HashLink } from 'react-router-hash-link'
+import { NavHashLink } from 'react-router-hash-link'
 const h1WrapperStyle = "bg-indigo-700 relative overflow-hidden"
 const h1ImgStyle = "w-full object-cover object-top h-56 opacity-75 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
@@ -30,7 +30,7 @@ const WorksItem = (prop) => {
                         <a href={item.blogUrl} className={`text-xs w-1/2 text-gray-600 text-right ${item.blogUrl ? "" : "hidden"}`}>詳細ブログ</a>
                     </div>
                     <h2 className="font-bold text-xl">{item.title}</h2>
-                    <h3 className="text-sm mb-2">{item.subtitle}</h3>
+                    <h3 className="text-sm mb-2">{item.subtitle}<a href={item.githubUrl}><i class={`text-gray-900 fab fa-git-alt text-sm　my-1 ml-2 ${item.githubUrl?"": "hidden"}`}></i></a></h3>
                     <p className="text-gray-700 text-xs">{item.discription}</p>
                     </div>
                 <div className="pt-1 text-left">
@@ -51,6 +51,12 @@ export default class Works extends React.Component {
         this.setState({latest:!this.state.latest, effect: true})
         setTimeout(()=>{
             this.setState({effect:false})},400)
+    }
+
+    scrollWithOffset = (el) => {
+        const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+        const yOffset = -80; 
+        window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
     }
 
     render() {
@@ -76,7 +82,7 @@ export default class Works extends React.Component {
                 <p className="text-gray-700 text-xs">
                     これまでに個人またはチームで取り組んだ開発作品です。<br/>
                     研究業績については<Link className="underline" to="/research">こちら</Link> <br/>
-                    これまでのインターンシップ履歴については<HashLink className="underline" to="/about#career">こちら</HashLink>
+                    これまでのインターンシップ履歴については<NavHashLink className="underline" to="/about#career" scroll={el=> this.scrollWithOffset(el)}>こちら</NavHashLink>
                 </p>
             </div>
             <div className="text-right mx-5" onClick={this.toggleLatest}>
@@ -98,9 +104,11 @@ const TAG_COLORS = {
     "SpringBoot": "text-green-600",
     "Node.js": "text-green-700",
     "GoogleAppsScript": "text-blue-800",
+    "TypeScript": "text-blue-800",
     "ReactNative": "text-blue-700",
     "HTML/CSS": "text-yellow-500",
     "Python": "text-pink-400",
+    "Firebase": "text-orange-400"
 }
 
 const WORKS = [
@@ -113,6 +121,7 @@ const WORKS = [
         tags: ["ReactJS", "GoogleAppsScript"],
         blogUrl: null,
         imgPath: null,
+        githubUrl: "https://github.com/sho0126hiro/sho0126hiro.github.io/tree/develop"
     },
     {
         term: "2020.05",
@@ -120,9 +129,10 @@ const WORKS = [
         title: "DiaryShare(仮)",
         subtitle: "日記共有アプリ（開発中）",
         discription: "SNSとブログの中間に位置し、特定の相手にだけ日記を共有できるようなアプリを個人で開発しています。現在はバックエンドをKotlinで開発中です。",
-        tags: ["Kotlin", "SpringBoot", "ReactJS"],
+        tags: ["Kotlin", "SpringBoot", "ReactJS", "TypeScript"],
         blogUrl: null,
-        imgPath: null
+        imgPath: null,
+        githubUrl: "https://github.com/sho0126hiro/DiaryShare-backend"
     },
     {
         term: "2018.10 - 2019.03",
@@ -132,7 +142,8 @@ const WORKS = [
         discription: "HackU 2018(Yahoo! Japan)でチーム(4人)で取り組んだプロジェクト。読書量の管理をし、スマホアプリでデータを可視化して表示するアプリを開発しました。書籍検索、本のレビューなどの機能も実装しました。自分はReactNative, Reduxを用いたアプリの開発を担当しました。",
         tags: ["ReactNative", "Node.js"],
         blogUrl: "https://sho0126hiro.hatenablog.com/entry/2019/03/12/141824",
-        imgPath: "/img/shiwori.jpg"
+        imgPath: "/img/shiwori.jpg",
+        githubUrl: "https://github.com/meister-prism/shiwori"
     },
     {
         term: "2019.10 - 2020.03",
@@ -140,9 +151,10 @@ const WORKS = [
         title: "KOYOMI",
         subtitle: "スマートな壁掛けカレンダー",
         discription: "HackU2019(Yahoo! Japan)でチーム(4人)で取り組んだプロジェクト。壁掛けカレンダーとスマホのカレンダーを同時に管理したい！という気持ちから、壁掛けカレンダーをIoTにしました。Webアプリ化することでどんな端末でも使える様にし、家族間での共有メモ機能やカレンダー上の付加情報など、IoTカレンダーならではの機能を実装しました。",
-        tags: ["ReactJS", "Kotlin", "SpringBoot"],
+        tags: ["ReactJS", "TypeScript", "Kotlin", "SpringBoot",],
         blogUrl: null,
-        imgPath: "./img/koyomi.jpg"
+        imgPath: "./img/koyomi.jpg",
+        githubUrl: "https://github.com/meister-prism/currender-api"
     },
     {
         term: "2019.09 - 2019.10",
@@ -150,7 +162,7 @@ const WORKS = [
         title: "文化祭 HP 2019",
         subtitle: "最新情報をいち早くお届け",
         discription: "チーム（5名程度）で取り組みました。1年目の反省を生かし、模擬店長や部長から直接最新情報を入力してもらうことで、商品の値下がりやイベントの変更などの情報をいち早く届ける動的HPを実現しました。自分はプロジェクトリーダーとして、全体の計画やスケジューリングなどを行うほか、フロントエンド開発を行いました。",
-        tags: ["ReactNative", "Node.js"],
+        tags: ["ReactJS", "Firebase"],
         blogUrl: null,
         imgPath: "/img/kfes2019.jpg"
     },
@@ -160,9 +172,10 @@ const WORKS = [
         title: "文化祭 HP 2018 / LINE@",
         subtitle: "当校初めての文化祭HP / LINE@",
         discription: "文化祭でHPを作成するのは当校において初めてでした。新しい文化祭実行部門の立ち上げに携わり、文化祭HPの作成に取り組みました特に、直感的に遷移するマップ機能をHP上およびLINE＠に実装しました。",
-        tags: ["HTML/CSS", "Node.js"],
+        tags: ["HTML/CSS", "Node.js",],
         blogUrl: "https://sho0126hiro.hatenablog.com/entry/2018/11/06/233849",
-        imgPath: "/img/kfes2018.png"
+        imgPath: "/img/kfes2018.png",
+        githubUrl: "https://github.com/teamET/2018.meister"
     },
     {
         term: "2017.10 - 2018.03",
@@ -172,7 +185,8 @@ const WORKS = [
         discription: "初めてのチームプロジェクト(4名)。HackU 2017(Yahoo! Japan)での作品です。LeapMotionを用いて認識した手の角度やポーズなどを利用して、手を倒した方向に進むといった、直感的な動作で動くラジコンを実装しました。",
         tags: ["Python"],
         blogUrl: null,
-        imgPath: "/img/meister2017.jpg"
+        imgPath: "/img/meister2017.jpg",
+        githubUrl: "https://github.com/teamET/2017.meister"
     },
     {
         term: "2019.06",
@@ -182,6 +196,7 @@ const WORKS = [
         discription: "RaspberryPiに接続したWebカメラが定期的orお願いしたときに写真を撮って、SlackやLINEグループに投稿するBOTを開発しました。",
         tags: ["Python",],
         blogUrl: "https://sho0126hiro.hatenablog.com/entry/2019/06/16/183000",
-        imgPath: "/img/webcambot.jpg"
+        imgPath: "/img/webcambot.jpg",
+        githubUrl: "https://github.com/sho0126hiro/webcam_linebot"
     },
 ]

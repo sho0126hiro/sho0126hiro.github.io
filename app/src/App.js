@@ -16,19 +16,19 @@ import Footer from './components/Footer';
 export default () => {
 	return <BrowserRouter basename={process.env.PUBLIC_URL}>
 		<Switch>
-			<div onTouchStart="">
-			<ScrollToTop />
-			<Navbar />
-			<div className="pt-14"></div>
-			<Route exact path='/' component={Home} />
-			<Route path='/about' component={About} />
-			<Route path='/works' component={Works} />
-			<Route path='/research' component={Research} />
-			<Route path='/links' component={Links} />
-			<Route path='/contact' component={Contact} />
-			<Footer />
+			<div onTouchStart="" className="">
+				<ScrollToTop />
+				<Navbar />
+				<div className="pt-14"></div>
+				<Route exact path='/' component={Home} />
+				<Route path='/about' component={About} />
+				<Route path='/works' component={Works} />
+				<Route path='/research' component={Research} />
+				<Route path='/links' component={Links} />
+				<Route path='/contact' component={Contact} />
+				<Footer />
 			</div>
 		</Switch>
-		
+
 	</BrowserRouter>
 }

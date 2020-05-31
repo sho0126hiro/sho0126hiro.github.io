@@ -5,14 +5,15 @@ export default () => {
     let infomation = []
     for (let e of INFO) {
         infomation.push(
-            <p>{e.message}
-                <span className="text-xs pl-5">{e.timestamp}</span>
-            </p>
+            <div className="flex text-pink-800 mt-1">
+                <p className="flex w-3/12 font-medium text-xs">{e.timestamp}</p>
+                <p className="flex w-9/12 ml-4 text-xs">{e.message}</p>
+            </div>
         )
     }
-    return <div className="my-4">
-        <label className="text-xl ml-4">information</label>
-        <div className="mx-8">
+    return <div className="rounded-lg m-4 p-3 bg-pink-200">
+        <label className="font-semibold text-pink-700 mx-2">Information</label>
+        <div className="w-full mt-2">
             {infomation}
         </div>
     </div>
@@ -21,5 +22,9 @@ const INFO = [
     {
         message: "現在開発中です。モバイル対応のレイアウトを書いています。",
         timestamp: "2020/05/20"
+    },
+    {
+        message: "モバイル対応できました。",
+        timestamp: "2020/05/31"
     }
 ]

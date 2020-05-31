@@ -1,8 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import dotenv from 'dotenv'
-import { stringify } from 'querystring'
-import { prototype } from 'module'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const h1WrapperStyle = "bg-blue-800 relative overflow-hidden"
