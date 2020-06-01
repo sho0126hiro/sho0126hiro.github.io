@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
-const h1WrapperStyle = "bg-blue-800 relative overflow-hidden"
+const h1WrapperStyle = "bg-blue-800 relative overflow-hidden lg:hidden"
 const h1ImgStyle = "w-full object-cover h-56 opacity-50 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
 
@@ -140,14 +140,22 @@ export default class Contact extends React.Component {
                 </div>
             </div>
         }
-        return <div className="contact">
-            <div className={h1WrapperStyle}>
+        return <div className="contact lg:w-7/12 lg:mx-auto">
+            <div className={`${h1WrapperStyle}`}>
                 <img src="/img/contact.JPG" className={h1ImgStyle} alt="contact" />
                 <h1 className={h1TextStyle} >
                     CONTACT
             </h1>
             </div>
-            <div className="mt-10">
+
+            <div className="hidden lg:flex">
+                <div className="hidden lg:block lg:mx-10 lg:mt-10 lg:mr-5 lg:bg-blue-900 full relative">
+                    <img src="/img/contact.JPG" className="w-full h-64 object-cover opacity-75" />
+                    <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">CONTACT</label>
+                </div>
+            </div>
+
+            <div className="mt-10 lg:mx-20">
                 <div className="w-9/12 mx-auto">
                     <input
                         type="text"

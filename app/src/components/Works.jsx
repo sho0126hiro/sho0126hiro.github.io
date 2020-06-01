@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { NavHashLink } from 'react-router-hash-link'
-const h1WrapperStyle = "bg-indigo-700 relative overflow-hidden"
+const h1WrapperStyle = "bg-indigo-700 relative overflow-hidden lg:hidden"
 const h1ImgStyle = "w-full object-cover object-top h-56 opacity-75 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
 
@@ -14,13 +14,13 @@ const WorksItem = (prop) => {
         let color = TAG_COLORS[t] || "text-gray-800"
         tags.push(<>
             <i class={`fas fa-circle text-xs ${color}`}></i>
-        <span key={i} className="inline-block text-xs text-gray-900 m-1">
-        {t}</span>
+            <span key={i} className="inline-block text-xs text-gray-900 m-1">
+                {t}</span>
         </>
         )
     })
     return (
-        <div className={`m-5 max-w-sm rounded-b-lg border overflow-hidden shadow-lg 
+        <div className={`m-5 max-w-sm rounded-b-lg border overflow-hidden shadow-lg lg:m-10
         ${prop.effect ? "effect" : "no-effect"}`}>
             <img className={`w-full ${item.imgPath ? "" : "hidden"}`} src={item.imgPath} alt="works img" />
             <div className="px-6 py-3">
@@ -30,9 +30,9 @@ const WorksItem = (prop) => {
                         <a href={item.blogUrl} className={`text-xs w-1/2 text-gray-600 text-right ${item.blogUrl ? "" : "hidden"}`}>詳細ブログ</a>
                     </div>
                     <h2 className="font-bold text-xl">{item.title}</h2>
-                    <h3 className="text-sm mb-2">{item.subtitle}<a href={item.githubUrl}><i class={`text-gray-900 fab fa-git-alt text-sm　my-1 ml-2 ${item.githubUrl?"": "hidden"}`}></i></a></h3>
-                    <p className="text-gray-700 text-xs">{item.discription}</p>
-                    </div>
+                    <h3 className="text-sm mb-2">{item.subtitle}<a href={item.githubUrl}><i class={`text-gray-900 fab fa-git-alt text-sm　my-1 ml-2 ${item.githubUrl ? "" : "hidden"}`}></i></a></h3>
+                    <p className="text-gray-700 text-xs leading-relaxed ">{item.discription}</p>
+                </div>
                 <div className="pt-1 text-left">
                     {tags}
                 </div>
@@ -48,14 +48,15 @@ export default class Works extends React.Component {
     }
 
     toggleLatest = () => {
-        this.setState({latest:!this.state.latest, effect: true})
-        setTimeout(()=>{
-            this.setState({effect:false})},400)
+        this.setState({ latest: !this.state.latest, effect: true })
+        setTimeout(() => {
+            this.setState({ effect: false })
+        }, 400)
     }
 
     scrollWithOffset = (el) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-        const yOffset = -80; 
+        const yOffset = -80;
         window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
     }
 
@@ -68,30 +69,36 @@ export default class Works extends React.Component {
             if (this.state.latest) return m_a - m_b
             return m_b - m_a
         })
-        data.forEach((item,i) => {
+        data.forEach((item, i) => {
             works.push(<WorksItem key={i} item={item} effect={this.state.effect} />)
         })
-        return <div className="works">
+        return <div className="works lg:w-7/12 lg:mx-auto">
             <div className={h1WrapperStyle}>
-			<img src="/img/skytree.JPG" className={h1ImgStyle} />
-			<h1 className={h1TextStyle} >
-				WORKS
+                <img src="/img/skytree.JPG" className={h1ImgStyle} />
+                <h1 className={h1TextStyle} >
+                    WORKS
             </h1>
-		</div>
-            <div className="m-5 p-3 bg-gray-200">
-                <p className="text-gray-700 text-xs">
-                    これまでに個人またはチームで取り組んだ開発作品です。<br/>
-                    研究業績については<Link className="underline" to="/research">こちら</Link> <br/>
-                    これまでのインターンシップ履歴については<NavHashLink className="underline" to="/about#career" scroll={el=> this.scrollWithOffset(el)}>こちら</NavHashLink>
-                </p>
             </div>
-            <div className="text-right mx-5" onClick={this.toggleLatest}>
+            <div className="lg:flex">
+                <div className="hidden lg:block lg:m-10 lg:mr-5 lg:bg-blue-700 w-1/2 relative">
+                    <img src="/img/skytree.JPG" className="w-full h-64 object-top object-cover opacity-75" />
+                    <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">WORK</label>
+                </div>
+                <div className=" m-5 p-3 bg-gray-200 lg:w-1/2 lg:m-10 lg:ml-5 lg:text-center leading-relaxed lg:flex lg:items-center lg:border">
+                    <p className="text-gray-700 text-xs lg:text-base">
+                        個人またはチームで取り組んだ開発作品です。<br />
+                        研究業績については<Link className="underline" to="/research">こちら</Link> <br />
+                        これまでのインターンシップ履歴については<NavHashLink className="underline" to="/about#career" scroll={el => this.scrollWithOffset(el)}>こちら</NavHashLink>
+                    </p>
+                </div>
+            </div>
+            <div className="text-right mx-5 lg:mr-20" onClick={this.toggleLatest}>
                 <label className="text-sm mx-3 pr-10">日付順</label>
                 <div className="inline allow-wrapper relative">
                     <p className={`allow ${this.state.latest ? "up" : ""}`}></p>
                 </div>
             </div>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap items-center justify-center">
                 {works}
             </div>
         </div>
@@ -175,7 +182,7 @@ const WORKS = [
         tags: ["HTML/CSS", "Node.js",],
         blogUrl: "https://sho0126hiro.hatenablog.com/entry/2018/11/06/233849",
         imgPath: "/img/kfes2018.png",
-        githubUrl: "https://github.com/teamET/2018.meister"
+        githubUrl: "https://github.com/teamET/2018.perform"
     },
     {
         term: "2017.10 - 2018.03",

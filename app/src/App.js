@@ -20,7 +20,7 @@ export default () => {
 				<ScrollToTop />
 				<Navbar className="" />
 				<div className="flex-1">
-					<div className="pt-14"></div>
+					<div className="pt-14 lg:pt-56"></div>
 					<Route exact path='/' component={Home} />
 					<Route path='/about' component={About} />
 					<Route path='/works' component={Works} />
