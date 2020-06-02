@@ -3,7 +3,7 @@ import { Link, useLocation, Redirect } from 'react-router-dom'
 import Information from './Information'
 import queryString from 'query-string'
 
-const contentWrapperStyle = "p-2 px-4 lg:p-4 lg:bg-white relative overflow-hidden lg:w-1/2"
+const contentWrapperStyle = "cursor-pointer p-2 px-4 md:p-4 md:bg-white relative overflow-hidden md:w-1/2"
 const contentImgStyle = "w-full object-cover object-top h-48 lg:h-64 opacity-75"
 const contentTextStyle = "absolute text-white text-4xl font-bold"
 
@@ -38,10 +38,10 @@ export default () => {
             <h1 className="absolute bottom-0 left-0 ml-8 mb-4 lg:ml-20 text-gray-200 text-6xl lg:text-7xl font-bold">
                 Portfolio</h1>
         </div>
-        <div className="lg:w-7/12 lg:mx-auto mt-5">
+        <div className="md:w-9/12 lg:w-7/12 md:mx-auto mt-5">
             {/* <Information /> */}
             <div className="content">
-                <p className={`text-xl ml-5 font-bold lg:text-3xl mb-m-1`}>Contents</p>
+                <p className={`text-xl ml-5 font-bold md:text-3xl mb-m-1`}>Contents</p>
                 <div className="flex flex-wrap justify-center">
                     <div className={`${contentWrapperStyle}`}>
                         <Link to="/about">
@@ -88,7 +88,7 @@ export default () => {
                         </Link>
                     </div>
                 </div>
-                <div className={`lg:w-full mb-4 ${contentWrapperStyle}`}>
+                <div className={`md:w-full mb-4 ${contentWrapperStyle}`}>
                     <Link to="/contact">
                         <div className="bg-blue-800 overflow-hidden">
 

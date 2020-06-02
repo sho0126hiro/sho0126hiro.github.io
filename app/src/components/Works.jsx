@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { NavHashLink } from 'react-router-hash-link'
-const h1WrapperStyle = "bg-indigo-700 relative overflow-hidden lg:hidden"
+const h1WrapperStyle = "bg-indigo-700 relative overflow-hidden md:hidden"
 const h1ImgStyle = "w-full object-cover object-top h-56 opacity-75 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
 
@@ -20,7 +20,7 @@ const WorksItem = (prop) => {
         )
     })
     return (
-        <div className={`m-5 max-w-sm rounded-b-lg border overflow-hidden shadow-lg lg:m-10
+        <div className={`m-5 max-w-sm rounded-b-lg border overflow-hidden shadow-lg lg:m-8
         ${prop.effect ? "effect" : "no-effect"}`}>
             <img className={`w-full ${item.imgPath ? "" : "hidden"}`} src={item.imgPath} alt="works img" />
             <div className="px-6 py-3">
@@ -29,9 +29,9 @@ const WorksItem = (prop) => {
                         <p className="flex w-1/2 text-xs text-gray-600">{item.term}</p>
                         <a href={item.blogUrl} className={`text-xs w-1/2 text-gray-600 text-right ${item.blogUrl ? "" : "hidden"}`}>詳細ブログ</a>
                     </div>
-                    <h2 className="font-bold text-xl">{item.title}</h2>
-                    <h3 className="text-sm mb-2">{item.subtitle}<a href={item.githubUrl}><i class={`text-gray-900 fab fa-git-alt text-sm　my-1 ml-2 ${item.githubUrl ? "" : "hidden"}`}></i></a></h3>
-                    <p className="text-gray-700 text-xs leading-relaxed ">{item.discription}</p>
+                    <h2 className="font-bold text-xl md:text-2xl">{item.title}</h2>
+                    <h3 className="text-sm mb-2 md:text-base">{item.subtitle}<a href={item.githubUrl}><i class={`text-gray-900 fab fa-git-alt text-sm　my-1 ml-2 ${item.githubUrl ? "" : "hidden"}`}></i></a></h3>
+                    <p className="text-gray-700 text-xs leading-relaxed md:text-sm">{item.discription}</p>
                 </div>
                 <div className="pt-1 text-left">
                     {tags}
@@ -72,29 +72,29 @@ export default class Works extends React.Component {
         data.forEach((item, i) => {
             works.push(<WorksItem key={i} item={item} effect={this.state.effect} />)
         })
-        return <div className="works lg:w-7/12 lg:mx-auto">
+        return <div className="works md:w-10/12 lg:w-7/12 md:mx-auto">
             <div className={h1WrapperStyle}>
                 <img src="/img/skytree.JPG" className={h1ImgStyle} />
                 <h1 className={h1TextStyle} >
                     WORKS
             </h1>
             </div>
-            <div className="lg:flex">
-                <div className="hidden lg:block lg:m-10 lg:mr-5 lg:bg-blue-700 w-1/2 relative">
-                    <img src="/img/skytree.JPG" className="w-full h-64 object-top object-cover opacity-75" />
+            <div className="md:flex">
+                <div className="hidden md:block md:m-8 lg:m-10 md:mr-5 md:bg-blue-700 w-1/2 relative">
+                    <img src="/img/skytree.JPG" className="w-full lg:h-64 md:h-40 object-top object-cover opacity-75" />
                     <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">WORK</label>
                 </div>
-                <div className=" m-5 p-3 bg-gray-200 lg:w-1/2 lg:m-10 lg:ml-5 lg:text-center leading-relaxed lg:flex lg:items-center lg:border">
-                    <p className="text-gray-700 text-xs lg:text-base">
+                <div className=" m-5 p-3 bg-gray-200 md:w-1/2 md:m-8 lg:m-10 lg:ml-5 md:justify-center lg:text-center leading-relaxed md:flex md:items-center md:border">
+                    <p className="text-gray-700 text-xs md:text-sm lg:text-base">
                         個人またはチームで取り組んだ開発作品です。<br />
                         研究業績については<Link className="underline" to="/research">こちら</Link> <br />
-                        これまでのインターンシップ履歴については<NavHashLink className="underline" to="/about#career" scroll={el => this.scrollWithOffset(el)}>こちら</NavHashLink>
+                        インターンシップ履歴については<NavHashLink className="underline" to="/about#career" scroll={el => this.scrollWithOffset(el)}>こちら</NavHashLink>
                     </p>
                 </div>
             </div>
             <div className="text-right mx-5 lg:mr-20" onClick={this.toggleLatest}>
-                <label className="text-sm mx-3 pr-10">日付順</label>
-                <div className="inline allow-wrapper relative">
+                <label className="text-sm mx-3 pr-10 cursor-pointer">日付順</label>
+                <div className="inline allow-wrapper relative cursor-pointer">
                     <p className={`allow ${this.state.latest ? "up" : ""}`}></p>
                 </div>
             </div>
