@@ -25,7 +25,7 @@ export default class Contact extends React.Component {
     constructor() {
         super()
         this.state = {
-            success_page: true,
+            success_page: false,
             name: "",
             email: "",
             content: "",
