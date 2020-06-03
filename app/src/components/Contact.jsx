@@ -128,7 +128,7 @@ export default class Contact extends React.Component {
                     <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">CONTACT</label>
                 </div>
             </div>
-                <div className=" md:my-10 md:mx-20">
+                <div className=" mx-5 my-4 md:my-10 md:mx-20">
                     <h2 className="text-2xl font-bold md:text-3xl">送信完了</h2>
                     <p className="text-sm text-gray-700 md:text-base">お問い合わせありがとうございます。</p>
                     <p className="mt-5 text-sm md:text-base">三日以内にこちらからの連絡がない場合、以下の連絡先にお問い合わせいただければ幸いです。</p>
