@@ -22,6 +22,7 @@ export default class Navbar extends React.Component {
 			<div className="flex items-center justify-between flex-wrap bg-blue-700 p-4  lg:px-64">
 					<Link className="inner-block" to="/">
 				<div className="flex items-center flex-shrink-0 text-white mr-6">
+					<img className="fill-current h-8 w-8 mr-2" src="/img/logo.png" widht="54" height="54"  viewBox="0 0 54 54"></img>
 					<span className="font-semibold text-xl tracking-tight lg:text-2xl">sho0126hiro</span>
 				</div>
 				</Link>

@@ -124,7 +124,7 @@ const WORKS = [
         timestamp: "2020/05", // ソート用
         title: "sho0126hiro.github.io",
         subtitle: "個人ホームページ",
-        discription: "就活用に自分のHPを作成しました。主にReact, TailswindCSS, GoogleAppsScriptを使っています。開発期間は1週間程度。初めてモバイルファーストを意識して実装しました。",
+        discription: "就活用に自分のHPをゼロから作成しました。主にReact, TailswindCSS, GoogleAppsScriptを使っています。初めてモバイルファーストを意識して実装しました。",
         tags: ["ReactJS", "GoogleAppsScript"],
         blogUrl: null,
         imgPath: null,
@@ -157,7 +157,7 @@ const WORKS = [
         timestamp: "2019/10", // ソート用
         title: "KOYOMI",
         subtitle: "スマートな壁掛けカレンダー",
-        discription: "HackU2019(Yahoo! Japan)でチーム(4人)で取り組んだプロジェクト。壁掛けカレンダーとスマホのカレンダーを同時に管理したい！という気持ちから、壁掛けカレンダーをIoTにしました。Webアプリ化することでどんな端末でも使える様にし、家族間での共有メモ機能やカレンダー上の付加情報など、IoTカレンダーならではの機能を実装しました。",
+        discription: "HackU2019(Yahoo! Japan)でチーム(4人)で取り組んだプロジェクト。壁掛けカレンダーとスマホのカレンダーを同時に管理したい！という気持ちから、壁掛けカレンダーをIoTにしました。Webアプリ化することでどんな端末でも使える様にし、家族間での共有メモ機能やカレンダー上の付加情報など、IoTカレンダーならではの機能を実装しました。サーバーサイド開発をメインとして開発した初めてのプロジェクトでした。",
         tags: ["ReactJS", "TypeScript", "Kotlin", "SpringBoot",],
         blogUrl: null,
         imgPath: "./img/koyomi.jpg",
@@ -178,7 +178,7 @@ const WORKS = [
         timestamp: "2018/09", // ソート用
         title: "文化祭 HP 2018 / LINE@",
         subtitle: "当校初めての文化祭HP / LINE@",
-        discription: "文化祭でHPを作成するのは当校において初めてでした。新しい文化祭実行部門の立ち上げに携わり、文化祭HPの作成に取り組みました特に、直感的に遷移するマップ機能をHP上およびLINE＠に実装しました。",
+        discription: "文化祭でHPを作成するのは当校において初めてでした。新しい文化祭実行部門の立ち上げに携わり、文化祭HPの作成に取り組みました。特に、インターンの経験を生かして、直感的に遷移するマップ機能をHP上およびLINE＠に実装しました。",
         tags: ["HTML/CSS", "Node.js",],
         blogUrl: "https://sho0126hiro.hatenablog.com/entry/2018/11/06/233849",
         imgPath: "/img/kfes2018.png",
@@ -189,7 +189,7 @@ const WORKS = [
         timestamp: "2017/10", // ソート用
         title: "2017年度マイスター作品",
         subtitle: "直感的な手の動作で動くラジコン",
-        discription: "初めてのチームプロジェクト(4名)。HackU 2017(Yahoo! Japan)での作品です。LeapMotionを用いて認識した手の角度やポーズなどを利用して、手を倒した方向に進むといった、直感的な動作で動くラジコンを実装しました。",
+        discription: "初めてのチームプロジェクト(4名)。HackU 2017(Yahoo! Japan)での作品です。LeapMotionを用いて認識した手の角度やポーズなどを利用して、手を倒した方向に進むといった、直感的な動作で動くラジコンを実装しました。LeapMotionで受け取った詳細な手指の位置データからモータの回転数などを決めるデータに変換する部分を担当しました。",
         tags: ["Python"],
         blogUrl: null,
         imgPath: "/img/meister2017.jpg",

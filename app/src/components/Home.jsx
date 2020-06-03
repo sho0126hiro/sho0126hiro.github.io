@@ -20,9 +20,7 @@ const urlList = [
  * github pages deploy用
  */
 const redirect = (url) => {
-    console.log(url)
     if (urlList.indexOf(url) == -1) return <Redirect to="/" />
-    console.log(url)
     return <Redirect to={url} />
 }
 

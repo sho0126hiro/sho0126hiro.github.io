@@ -25,7 +25,7 @@ export default class Contact extends React.Component {
     constructor() {
         super()
         this.state = {
-            success_page: false,
+            success_page: true,
             name: "",
             email: "",
             content: "",
@@ -116,17 +116,23 @@ export default class Contact extends React.Component {
 
     render() {
         if (this.state.success_page) {
-            return <div className="contact">
+            return <div className="contact md:mx-auto md:w-10/12 lg:w-7/12 ">
                 <div className={h1WrapperStyle}>
                     <img src="/img/contact.JPG" className={h1ImgStyle} alt="contact" />
                     <h1 className={h1TextStyle} >
                         CONTACT</h1>
                 </div>
-                <div className="m-5">
-                    <h2 className="text-2xl font-bold">送信完了</h2>
-                    <p className="text-sm text-gray-700">お問い合わせありがとうございます。</p>
-                    <p className="mt-5 text-sm">三日以内にこちらからの連絡がない場合、以下の連絡先にお問い合わせいただければ幸いです。</p>
-                    <ul className="mx-5 my-2">
+                <div className="hidden lg:flex">
+                <div className="hidden lg:block lg:mx-10 lg:mt-10 lg:mr-5 lg:bg-blue-900 full relative">
+                    <img src="/img/contact.JPG" className="w-full h-64 object-cover opacity-75" />
+                    <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">CONTACT</label>
+                </div>
+            </div>
+                <div className=" md:my-10 md:mx-20">
+                    <h2 className="text-2xl font-bold md:text-3xl">送信完了</h2>
+                    <p className="text-sm text-gray-700 md:text-base">お問い合わせありがとうございます。</p>
+                    <p className="mt-5 text-sm md:text-base">三日以内にこちらからの連絡がない場合、以下の連絡先にお問い合わせいただければ幸いです。</p>
+                    <ul className="mx-5 my-2 md:text-lg">
                         <CopyToClipboard text="sho0126hiro@gmail.com">
                             <li>sho0126hiro@gmail.com
                             <i class="far fa-copy ml-1 text-xs text-gray-700"></i>
@@ -136,7 +142,7 @@ export default class Contact extends React.Component {
                             <li>s20613@tokyo.kosen-ac.jp<i class="far fa-copy ml-1 text-xs text-gray-700"></i></li>
                         </CopyToClipboard>
                     </ul>
-                    <Link to="/" className="underline text-center block mt-4">Homeに戻る</Link>
+                    <Link to="/" className="underline text-center block mt-4 md:text-lg md:mt-5">Homeに戻る</Link>
                 </div>
             </div>
         }

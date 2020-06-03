@@ -30,7 +30,7 @@ export default () => (
 				<p className="px-5 text-xs md:text-xl">National Institute of Technology, Tokyo Collage</p>
 				<p className="px-5 text-xs md:text-xl">Advanced Cource of Mechanical and Computer Science</p>
 				<div className="md:flex md:m-5 md:justify-center">
-					<img src="/img/profile.JPG" className="w-3/6 h-3/6 md:w-2/6 md:h-2/6 mx-auto p-5 md:m-0" />
+					<img src="/img/profile.JPG" className="w-3/6 h-3/6 md:w-2/6 md:h-full md:my-auto mx-auto p-5 md:m-0" />
 					<div className="flex flex-col md:w-1/2 md:justify-center md:py-10">
 						<div className="flex flex-auto">
 							<label className={profileLabelStyle}>名前</label>
@@ -97,7 +97,7 @@ export default () => (
 					<div className="px-6 mt-1 lg:mt-4">
 						<a className="px-2 text-sm text-blue-500 mg:text-base lg:text-lg" href="https://bldt.jp/">株式会社ビルディット
 							<span className="text-xs m-1 pl-2 text-gray-700 md:text-sm lg:text-base">2019.06-2019.07 (2month)</span></a>
-						<p className="text-xs mx-4 mt-1 mb-2 md:text-sm lg:text-base lg:mb-4 lg:my-2 md:mx-8">シンプルな静的サイトの開発やReactJSを用いたTodoアプリ、およびPHP(Laravel)を用いてWebサービスを開発しました。</p>
+						<p className="text-xs mx-4 mt-1 mb-2 md:text-sm lg:text-base lg:mb-4 lg:my-2 md:mx-8">シンプルな静的サイトのフロントエンド開発やReactJSを用いたTodoアプリ、およびPHP(Laravel)を用いてWebサービスを開発しました。</p>
 						<hr />
 					</div>
 					<div className="px-6 mt-1 lg:mt-4">
