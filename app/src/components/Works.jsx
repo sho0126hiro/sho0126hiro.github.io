@@ -126,7 +126,7 @@ const WORKS = [
         subtitle: "個人ホームページ",
         discription: "就活用に自分のHPをゼロから作成しました。主にReact, TailswindCSS, GoogleAppsScriptを使っています。初めてモバイルファーストを意識して実装しました。",
         tags: ["ReactJS", "GoogleAppsScript"],
-        blogUrl: null,
+        blogUrl: "https://sho0126hiro.hatenablog.com/entry/2020/06/03/220720",
         imgPath: null,
         githubUrl: "https://github.com/sho0126hiro/sho0126hiro.github.io/tree/develop"
     },

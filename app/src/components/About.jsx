@@ -103,7 +103,7 @@ export default () => (
 					<div className="px-6 mt-1 lg:mt-4">
 						<a className="px-2 text-sm text-blue-500 mg:text-base lg:text-lg" href="https://www.askul.co.jp/kaisya/">アスクル株式会社
 				<span className="text-xs m-1  ml-2 text-gray-700 md:text-sm lg:text-base">2019.08 (1week)</span></a>
-						<p className="text-xs mx-4 mt-1 mb-2 md:text-sm lg:text-base lg:mb-4 lg:my-2 md:mx-8">個人向け通販サイト<a href="https://lohaco.jp" className="text-blue-600">Lohaco</a>のサービス改善のための提案および開発を行いました。</p>
+						<p className="text-xs mx-4 mt-1 mb-2 md:text-sm lg:text-base lg:mb-4 lg:my-2 md:mx-8">個人向け通販サイト<a href="https://lohaco.jp" className="text-blue-500">Lohaco</a>のサービス改善のための提案および開発を行いました。</p>
 						<hr />
 					</div>
 					<div className="px-6 mt-1 mb-2 lg:mt-4">
