@@ -10,7 +10,7 @@ const h1ImgStyle = "w-full object-cover h-56 opacity-50 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
 
 export default () => (
-	<div className="lg:w-7/12 lg:mx-auto">
+	<div className="lg:w-8/12 lg:mx-auto">
 		<div className={h1WrapperStyle}>
 			<img src="/img/links.JPG" className={h1ImgStyle} />
 			<h1 className={h1TextStyle} >

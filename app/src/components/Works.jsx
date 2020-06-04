@@ -72,7 +72,7 @@ export default class Works extends React.Component {
         data.forEach((item, i) => {
             works.push(<WorksItem key={i} item={item} effect={this.state.effect} />)
         })
-        return <div className="works md:w-10/12 lg:w-7/12 md:mx-auto">
+        return <div className="works md:w-10/12 lg:w-8/12 md:mx-auto">
             <div className={h1WrapperStyle}>
                 <img src="/img/skytree.JPG" className={h1ImgStyle} />
                 <h1 className={h1TextStyle} >

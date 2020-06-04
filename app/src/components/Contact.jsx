@@ -116,7 +116,7 @@ export default class Contact extends React.Component {
 
     render() {
         if (this.state.success_page) {
-            return <div className="contact md:mx-auto md:w-10/12 lg:w-7/12 ">
+            return <div className="contact md:mx-auto md:w-10/12 lg:w-8/12 ">
                 <div className={h1WrapperStyle}>
                     <img src="/img/contact.JPG" className={h1ImgStyle} alt="contact" />
                     <h1 className={h1TextStyle} >

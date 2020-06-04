@@ -23,7 +23,7 @@ export default () => (
 				ABOUT
             </h1>
 		</div>
-		<div className="lg:w-7/12 md:w-10/12 md:mx-auto">
+		<div className="lg:w-8/12 md:w-10/12 md:mx-auto">
 			{/* profile */}
 			<div className="profile py-2 md:py-10">
 				<label className="text-2xl md:text-5xl pl-5 font-bold">Sho Hirose</label>
