@@ -159,7 +159,7 @@ const WORKS = [
         subtitle: "スマートな壁掛けカレンダー",
         discription: "HackU2019(Yahoo! Japan)でチーム(4人)で取り組んだプロジェクト。壁掛けカレンダーとスマホのカレンダーを同時に管理したい！という気持ちから、壁掛けカレンダーをIoTにしました。Webアプリ化することでどんな端末でも使える様にし、家族間での共有メモ機能やカレンダー上の付加情報など、IoTカレンダーならではの機能を実装しました。自分は特にサーバーサイド(SocketAPI, RestAPI)の開発を担当しました。",
         tags: ["ReactJS", "TypeScript", "Kotlin", "SpringBoot",],
-        blogUrl: null,
+        blogUrl: "https://sho0126hiro.hatenablog.com/entry/2020/07/07/125149",
         imgPath: "./img/koyomi.jpg",
         githubUrl: "https://github.com/meister-prism/currender-api"
     },
