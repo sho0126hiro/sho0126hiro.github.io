@@ -131,17 +131,6 @@ const WORKS = [
         githubUrl: "https://github.com/sho0126hiro/sho0126hiro.github.io/tree/develop"
     },
     {
-        term: "2020.05",
-        timestamp: "2020/04", // ソート用
-        title: "DiaryShare(仮)",
-        subtitle: "日記共有アプリ（開発中）",
-        discription: "SNSとブログの中間に位置し、特定の相手にだけ日記を共有できるようなアプリを個人で開発しています。現在はバックエンドをKotlinで開発中です。",
-        tags: ["Kotlin", "SpringBoot", "ReactJS", "TypeScript"],
-        blogUrl: null,
-        imgPath: null,
-        githubUrl: "https://github.com/sho0126hiro/DiaryShare-backend"
-    },
-    {
         term: "2018.10 - 2019.03",
         timestamp: "2018/10", // ソート用
         title: "SHIWORI",
@@ -207,3 +196,19 @@ const WORKS = [
         githubUrl: "https://github.com/sho0126hiro/webcam_linebot"
     },
 ]
+
+/**
+ * ,
+    {
+        term: "2020.05",
+        timestamp: "2020/04", // ソート用
+        title: "DiaryShare(仮)",
+        subtitle: "日記共有アプリ（開発中）",
+        discription: "SNSとブログの中間に位置し、特定の相手にだけ日記を共有できるようなアプリを個人で開発しています。現在はバックエンドをKotlinで開発中です。",
+        tags: ["Kotlin", "SpringBoot", "ReactJS", "TypeScript"],
+        blogUrl: null,
+        imgPath: null,
+        githubUrl: "https://github.com/sho0126hiro/DiaryShare-backend"
+    }
+ * 
+ */
