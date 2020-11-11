@@ -51,20 +51,33 @@ export default () => (
             </div>
             <h2 className="text-xl mt-4 font-bold md:text-2xl lg:text-3xl ">研究業績</h2>
             <div className="mx-2 md:mx-5 md:mb-4 lg:mt-4 md:mt-2 md:text-bold md:text-xl">
+                <h3 className="md:font-semibold">査読付き学術論文</h3>
+                <ul className="mx-5 lg:my-2 lg:mx-10">
+                    <li className="list-decimal mb-2 mt-1 text-xs md:text-base">
+
+                        Sho Hirose, Daisuke Kitakoshi, Akihiro Yamashita, Kentarou Suzuki, Masato Suzuki: A Study on Intelligent Dialogue Agent for Older Adults' Preventive Care – Towards Development of a Comprehensive Preventive Care System –, Advances in Science, Technology and Engineering System Journal (ASTESJ), Vol. 5, No. 6, pp. 09-21, 2020
+                            <a className=""
+                            href="https://astesj.com/v05/i06/p02/">
+                            <i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
+                    </li>
+                </ul>
                 <h3 className="md:font-semibold">国際会議発表</h3>
                 <ul className="mx-5 lg:my-2 lg:mx-10">
                     <li className="list-decimal mb-2 mt-1 text-xs md:text-base">
-                        <a className=""
-                            href="https://ieeexplore.ieee.org/document/8959870">
-                            Daisuke Kitakoshi, Sho Hirose, Akihiro Yamashita, Kentarou Suzuki, Masato Suzuki: Development of an Intelligent Dialogue Agent for Older Adults -Evaluation of Functions to Control Spontaneous Talk and Coordinate Speech Content-, Proc. 2019 Conference on Technologies and Applications of Artificial Intelligence (TAAI2019), Kaohsiung, Taiwan, 2019 (Accepted).
-                <i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
+                        Daisuke Kitakoshi, Sho Hirose, Akihiro Yamashita, Kentarou Suzuki, Masato Suzuki: Development of an Intelligent Dialogue Agent for Older Adults -Evaluation of Functions to Control Spontaneous Talk and Coordinate Speech Content-, Proc. 2019 Conference on Technologies and Applications of Artificial Intelligence (TAAI2019), Kaohsiung, Taiwan, 2019 (Accepted).
+                            <a className=""
+                            href="https://doi.org/10.1109/TAAI48200.2019.8959870">
+                            <i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
                     </li>
                 </ul>
                 <h3 className="md:font-semibold lg:mt-4 md:mt-2">国内学会発表</h3>
                 <ul className="pl-4 list-decimal lg:mx-8 lg:pl-0">
                     <li className="text-xs m-2 md:text-base md:my-2">
                         廣瀬翔, 北越大輔, 鈴木健太郎, 山下晃弘, 鈴木雅人 : 包括的介護予防システムの実現へ向けた検討 ―知的対話エージェントと認知訓練システムの統合―, 2020年度人工知能学会全国大会（第34回）, 熊本, Jun. 2020.
-                </li>
+                            <a className=""
+                            href="https://doi.org/10.11517/pjsai.JSAI2020.0_1D4GS1301">
+                            <i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
+                    </li>
                     <li className="text-xs m-2 md:text-base md:my-2">
                         廣瀬翔, 北越大輔, 鈴木健太郎, 山下晃弘, 鈴木雅人 : 知的対話エージェントにおける発話内容調整機構の特性評価 ―包括的介護予防システムの開発に向けて―, 2020年電子情報通信学会総合大会, 東広島, Mar. 2020.
                 </li>
