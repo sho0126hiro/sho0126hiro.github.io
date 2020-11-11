@@ -5,5 +5,4 @@ npm start
 
 # デプロイ
 
-cd app/
-npm run deploy
+developブランチでpushすれば自動デプロイが走ります。
