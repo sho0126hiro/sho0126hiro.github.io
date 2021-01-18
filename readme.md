@@ -1,8 +1,10 @@
-# ローカル環境
+URL: [https://sho0126hiro.github.io/](https://sho0126hiro.github.io/)
 
-cd app/
-npm start
+# ローカル環境での実行
+
+`cd app/`
+`npm start`
 
 # デプロイ
 
-developブランチでpushすれば自動デプロイが走ります。
+developブランチにpushすると，TravisCIが動き，自動デプロイが走ります。
