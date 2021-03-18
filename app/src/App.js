@@ -1,6 +1,5 @@
 import React from 'react'
 import './css/App.css';
-import './js/delighters.js'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Home from './components/Home'

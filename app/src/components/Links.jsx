@@ -12,7 +12,7 @@ const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl 
 export default () => (
 	<div className="lg:w-8/12 lg:mx-auto">
 		<div className={h1WrapperStyle}>
-			<img src="/img/links.JPG" className={h1ImgStyle} />
+			<img src="/img/links.JPG" alt="link" className={h1ImgStyle} />
 			<h1 className={h1TextStyle} >
 				LINKS
             </h1>
@@ -20,7 +20,7 @@ export default () => (
 		{/* Links */}
 		<div className="hidden lg:flex">
             <div className="hidden lg:block lg:mx-10 lg:mt-10 lg:mr-5 lg:bg-blue-800 full relative">
-                <img src="/img/links.JPG" className="w-full h-64 object-cover opacity-75" />
+                <img src="/img/links.JPG" alt="link" className="w-full h-64 object-cover opacity-75" />
                 <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">LINKS</label>
             </div>
         </div>
@@ -33,19 +33,19 @@ export default () => (
 				</div>
 
 				<label className={linkLabelStyle}><i class="mr-2 fab fa-github"></i>Github</label>
-				<a href="https://github.com/sho0126hiro" target="_blank" className={linkContentStyle}>sho0126hiro
+				<a href="https://github.com/sho0126hiro" target="_blank" rel="noopener noreferrer" className={linkContentStyle}>sho0126hiro
 				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 
 				<label className={linkLabelStyle}><i class="mr-2 fab fa-twitter text-blue-400"></i>Twitter</label>
-				<a href="https://twitter.com/sho0126hiro" target="_blank" className={linkContentStyle}>@sho0126hiro
+				<a href="https://twitter.com/sho0126hiro" target="_blank" rel="noopener noreferrer" className={linkContentStyle}>@sho0126hiro
 				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 
 				<label className={linkLabelStyle}><i class="mr-2 fab fa-facebook-f text-blue-600"></i>Facebook</label>
-				<a href="https://www.facebook.com/sho.hirose.142" target="_blank" className={linkContentStyle}>sho.hirose.142
+				<a href="https://www.facebook.com/sho.hirose.142" target="_blank" rel="noopener noreferrer" className={linkContentStyle}>sho.hirose.142
 				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 
 				<label className={`${linkLabelStyle}`}>Hatena Blog</label>
-				<a href="https://sho0126hiro.hatenablog.com/" target="_blank" className={`${linkContentStyle} mb-4`}>Shoのシステム開発忘備録
+				<a href="https://sho0126hiro.hatenablog.com/" target="_blank" rel="noopener noreferrer" className={`${linkContentStyle} mb-4`}>Shoのシステム開発忘備録
 				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 			</div>
 		</div>
