@@ -53,9 +53,10 @@ export default class Contact extends React.Component {
     }
 
     varidateEmailFormat = (prop, message, errors) => {
+        // eslint-disable-next-line 
         const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (regex.test(prop)) return
-        if (errors.length != 1) errors.push(message)
+        if (errors.length !== 1) errors.push(message)
     }
 
 
@@ -72,7 +73,7 @@ export default class Contact extends React.Component {
                 content: contentErrors
             }
         })
-        if (nameErrors.length != 0 || emailErrors.length != 0 || contentErrors.length != 0) return false
+        if (nameErrors.length !== 0 || emailErrors.length !== 0 || contentErrors.length !== 0) return false
         return true
     }
 
@@ -118,13 +119,13 @@ export default class Contact extends React.Component {
         if (this.state.success_page) {
             return <div className="contact md:mx-auto md:w-10/12 lg:w-8/12 ">
                 <div className={h1WrapperStyle}>
-                    <img src="/img/contact.JPG" className={h1ImgStyle} alt="contact" />
+                    <img src="/img/contact.JPG" alt="contact" className={h1ImgStyle} />
                     <h1 className={h1TextStyle} >
                         CONTACT</h1>
                 </div>
                 <div className="hidden lg:flex">
                 <div className="hidden lg:block lg:mx-10 lg:mt-10 lg:mr-5 lg:bg-blue-900 full relative">
-                    <img src="/img/contact.JPG" className="w-full h-64 object-cover opacity-75" />
+                    <img src="/img/contact.JPG" alt="contact" className="w-full h-64 object-cover opacity-75" />
                     <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">CONTACT</label>
                 </div>
             </div>
@@ -156,7 +157,7 @@ export default class Contact extends React.Component {
 
             <div className="hidden lg:flex">
                 <div className="hidden lg:block lg:mx-10 lg:mt-10 lg:mr-5 lg:bg-blue-900 full relative">
-                    <img src="/img/contact.JPG" className="w-full h-64 object-cover opacity-75" />
+                    <img src="/img/contact.JPG" alt="contact" className="w-full h-64 object-cover opacity-75" />
                     <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">CONTACT</label>
                 </div>
             </div>

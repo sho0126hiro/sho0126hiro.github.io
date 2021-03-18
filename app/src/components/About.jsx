@@ -18,7 +18,7 @@ const linkContentStyle = "block text-xs lg:text-base md:text-sm"
 export default () => (
 	<div className="about">
 		<div className={h1WrapperStyle}>
-			<img src="/img/about.JPG" className={h1ImgStyle} />
+			<img src="/img/about.JPG" alt="about" className={h1ImgStyle} />
 			<h1 className={h1TextStyle} >
 				ABOUT
             </h1>
@@ -30,7 +30,7 @@ export default () => (
 				<p className="px-5 text-xs md:text-xl">National Institute of Technology, Tokyo Collage</p>
 				<p className="px-5 text-xs md:text-xl">Advanced Cource of Mechanical and Computer Science</p>
 				<div className="md:flex md:m-5 md:justify-center">
-					<img src="/img/profile.JPG" className="w-3/6 h-3/6 md:w-2/6 md:h-full md:my-auto mx-auto p-5 md:m-0" />
+					<img src="/img/profile.JPG" alt="profile" className="w-3/6 h-3/6 md:w-2/6 md:h-full md:my-auto mx-auto p-5 md:m-0" />
 					<div className="flex flex-col md:w-1/2 md:justify-center md:py-10">
 						<div className="flex flex-auto">
 							<label className={profileLabelStyle}>名前</label>
@@ -80,7 +80,7 @@ export default () => (
 								国立東京工業高等専門学校 <br />機械情報システム工学専攻 在学中（1年）</p>
 						</div>
 					</div>
-					<img src="/img/about.JPG" className="hidden md:flex md:w-1/3 md:h-full md:my-auto" />
+					<img src="/img/about.JPG" alt="profile" className="hidden md:flex md:w-1/3 md:h-full md:my-auto" />
 				</div>
 			</div>
 			<hr className="hidden md:block" />
@@ -94,7 +94,7 @@ export default () => (
 						<p className="text-xs mx-4 mt-1 mb-2 md:text-sm lg:text-base lg:mb-4 lg:my-2 md:mx-8">Ruby on Railsを用いたBtoBサービスの機能追加</p>
 						<hr />
 					</div>
-					
+
 					<div className="px-6 mt-1 mb-2 lg:mt-4">
 						<a className="px-2 text-sm text-blue-500 mg:text-base lg:text-lg" href="https://www.acroquest.co.jp/">Acroquest Technology 株式会社
 						<span className="text-xs m-1 ml-2 text-gray-700 md:text-sm lg:text-base">2020.09 (1day)</span></a>
@@ -152,17 +152,17 @@ export default () => (
 						<Link className={linkContentStyle} to="/">sho0126hiro.github.io
 				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></Link>
 						<label className={linkLabelStyle}>Github</label>
-						<a href="https://github.com/sho0126hiro" target="_blank" className={linkContentStyle}>sho0126hiro
+						<a href="https://github.com/sho0126hiro" target="_blank" rel="noopener noreferrer" className={linkContentStyle}>sho0126hiro
 				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 						<label className={linkLabelStyle}>Twitter</label>
-						<a href="https://twitter.com/sho0126hiro" target="_blank" className={linkContentStyle}>@sho0126hiro
+						<a href="https://twitter.com/sho0126hiro" target="_blank" rel="noopener noreferrer" className={linkContentStyle}>@sho0126hiro
 				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 						<label className={linkLabelStyle}>Facebook</label>
-						<a href="https://www.facebook.com/sho.hirose.142" target="_blank" className={linkContentStyle}>sho.hirose.142
+						<a href="https://www.facebook.com/sho.hirose.142" target="_blank" rel="noopener noreferrer" className={linkContentStyle}>sho.hirose.142
 				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 
 						<label className={linkLabelStyle}>Hatena Blog</label>
-						<a href="https://sho0126hiro.hatenablog.com/" target="_blank" className={linkContentStyle}>Shoのシステム開発忘備録
+						<a href="https://sho0126hiro.hatenablog.com/" target="_blank" rel="noopener noreferrer" className={linkContentStyle}>Shoのシステム開発忘備録
 				<i class="fas fa-link text-xs ml-1 text-gray-700"></i></a>
 					</div>
 				</div>

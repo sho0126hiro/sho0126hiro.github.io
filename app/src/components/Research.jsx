@@ -7,7 +7,7 @@ const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl 
 export default () => (
     <div className="lg:w-8/12 md:w-10/12 md:mx-auto">
         <div className={h1WrapperStyle}>
-            <img src="/img/lianchi_tan.JPG" className={h1ImgStyle} />
+            <img src="/img/lianchi_tan.JPG" alt="research" className={h1ImgStyle} />
             <h1 className={h1TextStyle} >
                 RESEARCH
             </h1>
@@ -15,7 +15,7 @@ export default () => (
         {/* lg - img. title */}
         <div className="hidden lg:flex">
             <div className="hidden lg:block lg:mx-10 lg:mt-10 lg:mr-5 lg:bg-green-700 w-1/2 relative">
-                <img src="/img/lianchi_tan.JPG" className="w-full h-64 object-top object-cover opacity-75" />
+                <img src="/img/lianchi_tan.JPG" alt="research" className="w-full h-64 object-top object-cover opacity-75" />
                 <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">RESEARCH</label>
             </div>
             <div className=" m-5 p-3 lg:w-1/2 lg:m-10 lg:ml-5 leading-relaxed ">
@@ -36,7 +36,7 @@ export default () => (
         <div className="m-5 md:mx-16 lg:mx-12">
             <div className="flex lg:hidden">
                 <div className="hidden lg:w-1/2 lg:bg-green-700 lg:relative m-10">
-                    <img src="/img/lianchi_tan.JPG" className="w-full h-64 opacity-75" />
+                    <img src="/img/lianchi_tan.JPG" alt="research" className="w-full h-64 opacity-75" />
                     <label className="absolute bottom-0 right-0 m-10 ml-5 text-white text-4xl font-bold">RESEARCH</label>
                 </div>
                 <div>
