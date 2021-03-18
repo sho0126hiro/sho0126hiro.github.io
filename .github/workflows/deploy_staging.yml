@@ -1,4 +1,4 @@
-# deploy staging
+# Stagingにデプロイ
 name: Deploy Staging
 on:
   pull_request:
@@ -6,23 +6,27 @@ on:
       - develop
 
 jobs:
-  checkout-branch:
+  build-and-push:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x] # 実行するノードバージョン
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js v14.15.4
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: 14.15.4
-      - run: cd ./app
-      - run: npm run build --if-present
-      - run: cd ..
-
-      - uses: actions/checkout@master
+          node-version: ${{ matrix.node-version }}
+      - name: npm install
+        run: npm install
+        working-directory: ./app
+      - name: npm run build
+        run: npm run build
+        working-directory: ./app
       - name: Push to build branch
         uses: s0/git-publish-subdir-action@master
         env:
           REPO: self
           BRANCH: staging
-          FOLDER: ./app/public
+          FOLDER: ./app/build
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -22,7 +22,7 @@ const WorksItem = (prop) => {
     return (
         <div className={`m-5 max-w-sm rounded-b-lg border overflow-hidden shadow-lg lg:m-8
         ${prop.effect ? "effect" : "no-effect"}`}>
-            <img className={`w-full ${item.imgPath ? "" : "hidden"}`} src={item.imgPath} alt="works img" />
+            <img className={`w-full ${item.imgPath ? "" : "hidden"}`} src={item.imgPath} alt="works" />
             <div className="px-6 py-3">
                 <div className="">
                     <div className="flex">
@@ -74,14 +74,14 @@ export default class Works extends React.Component {
         })
         return <div className="works md:w-10/12 lg:w-8/12 md:mx-auto">
             <div className={h1WrapperStyle}>
-                <img src="/img/skytree.JPG" className={h1ImgStyle} />
+                <img src="/img/skytree.JPG" alt="skytree" className={h1ImgStyle} />
                 <h1 className={h1TextStyle} >
                     WORKS
             </h1>
             </div>
             <div className="md:flex">
                 <div className="hidden md:block md:m-8 lg:m-10 md:mr-5 md:bg-blue-700 w-1/2 relative">
-                    <img src="/img/skytree.JPG" className="w-full lg:h-64 md:h-40 object-top object-cover opacity-75" />
+                    <img src="/img/skytree.JPG" alt="skytree" className="w-full lg:h-64 md:h-40 object-top object-cover opacity-75" />
                     <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">WORK</label>
                 </div>
                 <div className=" m-5 p-3 bg-gray-200 md:w-1/2 md:m-8 lg:m-10 lg:ml-5 md:justify-center lg:text-center leading-relaxed md:flex md:items-center md:border">
