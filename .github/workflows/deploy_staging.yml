@@ -1,0 +1,28 @@
+# deploy staging
+name: Deploy Staging
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  checkout-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js v14.15.4
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.15.4
+      - run: cd ./app
+      - run: npm run build --if-present
+      - run: cd ..
+
+      - uses: actions/checkout@master
+      - name: Push to build branch
+        uses: s0/git-publish-subdir-action@master
+        env:
+          REPO: self
+          BRANCH: staging
+          FOLDER: ./app/public
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
