@@ -33,3 +33,4 @@ jobs:
       - name: Firebase Push
         run: |
           yarn deploy --token=${{ secrets.FIREBASE_TOKEN }}
+        working-directory: ./app
