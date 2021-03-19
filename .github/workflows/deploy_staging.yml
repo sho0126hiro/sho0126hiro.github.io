@@ -30,3 +30,6 @@ jobs:
           BRANCH: staging
           FOLDER: ./app/build
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Firebase Push
+        run: |
+          yarn deploy --token=${{ secrets.FIREBASE_TOKEN }}
