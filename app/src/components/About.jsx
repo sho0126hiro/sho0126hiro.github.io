@@ -89,6 +89,18 @@ export default () => (
 				<label className="text-xl pl-5 my-3 font-semibold md:text-3xl md:block">Career</label>
 				<div className="md:px-16">
 					<div className="px-6 mt-1 mb-2 lg:mt-4">
+						<a className="px-2 text-sm text-blue-500 mg:text-base lg:text-lg" href="https://corp.moneyforward.com/">株式会社マネーフォワード
+						<span className="text-xs m-1 ml-2 text-gray-700 md:text-sm lg:text-base">2021.03 (2week)</span></a>
+						<p className="text-xs mx-4 mt-1 mb-2 md:text-sm lg:text-base lg:mb-4 lg:my-2 md:mx-8">Golangを用いたマイクロサービス開発</p>
+						<hr />
+					</div>
+					<div className="px-6 mt-1 mb-2 lg:mt-4">
+						<a className="px-2 text-sm text-blue-500 mg:text-base lg:text-lg" href="https://www.optim.co.jp/">株式会社オプティム
+						<span className="text-xs m-1 ml-2 text-gray-700 md:text-sm lg:text-base">2020.12 ~ 現在</span></a>
+						<p className="text-xs mx-4 mt-1 mb-2 md:text-sm lg:text-base lg:mb-4 lg:my-2 md:mx-8">医療系ITシステムのバックエンド開発など</p>
+						<hr />
+					</div>
+					<div className="px-6 mt-1 mb-2 lg:mt-4">
 						<a className="px-2 text-sm text-blue-500 mg:text-base lg:text-lg" href="https://www.optim.co.jp/">株式会社オプティム
 						<span className="text-xs m-1 ml-2 text-gray-700 md:text-sm lg:text-base">2020.09 (2week)</span></a>
 						<p className="text-xs mx-4 mt-1 mb-2 md:text-sm lg:text-base lg:mb-4 lg:my-2 md:mx-8">Ruby on Railsを用いたBtoBサービスの機能追加</p>
@@ -113,8 +125,7 @@ export default () => (
 						<p className="text-xs mx-4 mt-1 mb-2 md:text-sm lg:text-base lg:mb-4 lg:my-2 md:mx-8">Rubyを用いたCookpad模擬アプリケーションのパフォーマンスチューニングを行いました。</p>
 						<hr />
 					</div>
-					
-					
+
 					<div className="px-6 mt-1 lg:mt-4">
 						<a className="px-2 text-sm text-blue-500 mg:text-base lg:text-lg" href="https://www.askul.co.jp/kaisya/">アスクル株式会社
 						<span className="text-xs m-1  ml-2 text-gray-700 md:text-sm lg:text-base">2019.08 (1week)</span></a>
