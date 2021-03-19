@@ -6,7 +6,10 @@ Staging URL: [https://sho0126hiro-github-io-staging.web.app](https://sho0126hiro
 
 # server status
 
-![Website](https://img.shields.io/website?label=publish&url=https%3A%2F%2Fsho0126hiro.github.io%2F) ![Website](https://img.shields.io/website?label=develop&url=https%3A%2F%2Fsho0126hiro-github-io-staging.web.app)
+![Website](https://img.shields.io/website?label=publish&url=https%3A%2F%2Fsho0126hiro.github.io%2F) 
+
+![Website](https://img.shields.io/website?label=develop&url=https%3A%2F%2Fsho0126hiro-github-io-staging.web.app)
+
 # 実行
 
 ```shell
