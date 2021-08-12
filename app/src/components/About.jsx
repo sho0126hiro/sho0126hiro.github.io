@@ -88,6 +88,12 @@ export default () => (
 			<div className="career md:my-8" id="career">
 				<label className="text-xl pl-5 my-3 font-semibold md:text-3xl md:block">Career</label>
 				<div className="md:px-16">
+				<div className="px-6 mt-1 mb-2 lg:mt-4">
+						<a className="px-2 text-sm text-blue-500 mg:text-base lg:text-lg" href="https://corp.moneyforward.com/">株式会社マネーフォワード
+						<span className="text-xs m-1 ml-2 text-gray-700 md:text-sm lg:text-base">2021.04 ~ now</span></a>
+						<p className="text-xs mx-4 mt-1 mb-2 md:text-sm lg:text-base lg:mb-4 lg:my-2 md:mx-8">CTO室 マイクロサービス推進部 長期インターン</p>
+						<hr />
+					</div>
 					<div className="px-6 mt-1 mb-2 lg:mt-4">
 						<a className="px-2 text-sm text-blue-500 mg:text-base lg:text-lg" href="https://corp.moneyforward.com/">株式会社マネーフォワード
 						<span className="text-xs m-1 ml-2 text-gray-700 md:text-sm lg:text-base">2021.03 (2week)</span></a>
