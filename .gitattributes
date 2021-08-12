@@ -1,3 +1,3 @@
-src/css/tailwind.css linguist-vendored 
-build/* linguist-vendored 
-public/* linguist-vendored 
+app/src/css/tailwind.css linguist-vendored 
+app/src/build/* linguist-vendored
+app/public/* linguist-vendored 
