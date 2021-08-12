@@ -5,7 +5,7 @@ const linkLabelStyle = "mt-4 block mx-8 text-ms md:text-lg"
 const linkContentStyle = "block mx-8 text-xs md:text-base"
 
 
-const h1WrapperStyle = "bg-blue-800 relative overflow-hidden lg:hidden"
+const h1WrapperStyle = "bg-blue-800 relative overflow-hidden"
 const h1ImgStyle = "w-full object-cover h-56 opacity-50 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
 
@@ -17,13 +17,6 @@ export default () => (
 				LINKS
             </h1>
 		</div>
-		{/* Links */}
-		<div className="hidden lg:flex">
-            <div className="hidden lg:block lg:mx-10 lg:mt-10 lg:mr-5 lg:bg-blue-800 full relative">
-                <img src="/img/links.JPG" alt="link" className="w-full h-64 object-cover opacity-75" />
-                <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">LINKS</label>
-            </div>
-        </div>
 		<div className="history py-2 ">
 			<div className="md:text-center">
 				<label className={linkLabelStyle}><i class="mr-2 fas fa-home"></i>Home</label>
