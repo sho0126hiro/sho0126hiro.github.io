@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
-const h1WrapperStyle = "bg-blue-800 relative overflow-hidden lg:hidden"
+const h1WrapperStyle = "bg-blue-800 relative overflow-hidden"
 const h1ImgStyle = "w-full object-cover h-56 opacity-50 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
 
@@ -123,12 +123,6 @@ export default class Contact extends React.Component {
                     <h1 className={h1TextStyle} >
                         CONTACT</h1>
                 </div>
-                <div className="hidden lg:flex">
-                <div className="hidden lg:block lg:mx-10 lg:mt-10 lg:mr-5 lg:bg-blue-900 full relative">
-                    <img src="/img/contact.JPG" alt="contact" className="w-full h-64 object-cover opacity-75" />
-                    <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">CONTACT</label>
-                </div>
-            </div>
                 <div className=" mx-5 my-4 md:my-10 md:mx-20">
                     <h2 className="text-2xl font-bold md:text-3xl">送信完了</h2>
                     <p className="text-sm text-gray-700 md:text-base">お問い合わせありがとうございます。</p>
@@ -153,13 +147,6 @@ export default class Contact extends React.Component {
                 <h1 className={h1TextStyle} >
                     CONTACT
             </h1>
-            </div>
-
-            <div className="hidden lg:flex">
-                <div className="hidden lg:block lg:mx-10 lg:mt-10 lg:mr-5 lg:bg-blue-900 full relative">
-                    <img src="/img/contact.JPG" alt="contact" className="w-full h-64 object-cover opacity-75" />
-                    <label class="absolute bottom-0 right-0 mb-5 mr-10 text-white text-4xl font-bold">CONTACT</label>
-                </div>
             </div>
 
             <div className="mt-10 lg:mx-20">
