@@ -1,6 +1,6 @@
 import React from 'react'
 
-const h1WrapperStyle = "lg:hidden bg-green-700 relative overflow-hidden"
+const h1WrapperStyle = "bg-green-700 relative overflow-hidden"
 const h1ImgStyle = "w-full object-cover object-top h-56 opacity-50 overflow-hidden"
 const h1TextStyle = "absolute bottom-0 right-0 mr-8 mb-4 text-gray-200 text-4xl font-bold"
 
@@ -12,7 +12,7 @@ export default () => (
                 RESEARCH
             </h1>
         </div>
-        {/* lg - img. title */}
+        {/* lg - img. title
         <div className="hidden lg:flex">
             <div className="hidden lg:block lg:mx-10 lg:mt-10 lg:mr-5 lg:bg-green-700 w-1/2 relative">
                 <img src="/img/lianchi_tan.JPG" alt="research" className="w-full h-64 object-top object-cover opacity-75" />
@@ -31,10 +31,10 @@ export default () => (
                 </p>
                 </a>
             </div>
-        </div>
-        {/* sm - md */}
+        </div> */}
+        {/* sm - md - ld*/}
         <div className="m-5 md:mx-16 lg:mx-12">
-            <div className="flex lg:hidden">
+            <div className="flex">
                 <div className="hidden lg:w-1/2 lg:bg-green-700 lg:relative m-10">
                     <img src="/img/lianchi_tan.JPG" alt="research" className="w-full h-64 opacity-75" />
                     <label className="absolute bottom-0 right-0 m-10 ml-5 text-white text-4xl font-bold">RESEARCH</label>
